@@ -22,7 +22,8 @@ HTML, CSS, JavaScript thuần; font từ Google Fonts.
 
 ## Giao diện và điện thoại
 
-- Chọn **Hệ thống / Sáng / Tối** ở đầu trang. Mặc định theo hệ điều hành.
+- Nút tròn ở góc dưới bên phải đổi giao diện: đang sáng hiện **mặt trăng** để chuyển sang tối; đang tối hiện **mặt trời** để chuyển sang sáng. Nút nằm ngoài header, không chiếm chỗ hoặc che thanh chuyển trang.
+- Khi chưa chọn giao diện, trang theo hệ điều hành. Sau khi bấm nút, trang ghi nhớ lựa chọn sáng/tối.
 - Lựa chọn giao diện lưu trong `localStorage` với khóa `MLN122_WEB_THEME` và được áp dụng ngay khi tải trang. Nếu trình duyệt chặn lưu trữ, vẫn đổi được giao diện trong trang hiện tại.
 - Trên điện thoại, vuốt thanh menu ngang để chuyển phần học; các sơ đồ rộng có thể cuộn ngang trong khung riêng. Thanh ngày lao động và đồng hồ xếp thành một cột.
 - Chạm thẻ rồi chạm ô để phân loại. Có thể cuộn dọc từ vùng thẻ; kéo ngang để di chuyển thẻ, hoặc dùng chuột trên máy tính.
