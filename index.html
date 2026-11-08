@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Giờ thứ 5: lý thuyết Chương 3 và Chương 5 Kinh tế chính trị Mác – Lênin với mô hình tương tác.">
+<title>Giờ Thứ Năm</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Big+Shoulders+Display:wght@700;800;900&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Bố cục: mỗi mục giáo trình là một trang; mỗi khái niệm = 1–2 dòng chữ + một hình tương tác lớn.
+   Màu: Ch.3 I.1 = xanh lục, Ch.3 I.2–II = cam, Ch.5 III = xanh lam. */
+:root {
+  --paper: #f2f4f7; --card: #ffffff; --ink: #18202e; --muted: #5d6779; --rule: #d5dbe4; --soft: #e7ebf1;
+  --t1: #12866f; --t2: #c9611a; --t5: #3b5bc4; --ok: #1d8a4b; --bad: #c43c32;
+  --t1-soft: #dcf1ec; --t2-soft: #fbe6d6; --t5-soft: #e0e7fb; --cgray: #9aa8bd;
+  --f-display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --f-body: "Be Vietnam Pro", "Segoe UI", Roboto, Arial, sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #0d121c; --card: #151c2a; --ink: #e9e7e0; --muted: #9aa3b5; --rule: #2a3449; --soft: #1d2638;
+  --t1: #4cc3a5; --t2: #f39b4a; --t5: #86a3ff; --ok: #69d38c; --bad: #ff7a6e;
+  --t1-soft: #15302b; --t2-soft: #33230f; --t5-soft: #1c2747; --cgray: #55627a; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --paper: #0d121c; --card: #151c2a; --ink: #e9e7e0; --muted: #9aa3b5; --rule: #2a3449; --soft: #1d2638;
+  --t1: #4cc3a5; --t2: #f39b4a; --t5: #86a3ff; --ok: #69d38c; --bad: #ff7a6e;
+  --t1-soft: #15302b; --t2-soft: #33230f; --t5-soft: #1c2747; --cgray: #55627a; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+:focus-visible { outline: 2px solid var(--t2); outline-offset: 2px; }
+.wrap { max-width: 68rem; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.mono { font-family: var(--f-mono); font-variant-numeric: tabular-nums; }
+.eyebrow { margin: 0; font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; font-weight: 700; color: var(--muted); }
+h1, h2, h3 { text-wrap: balance; }
+p { margin: 0; }
+svg text { font-family: var(--f-body); }
+.c1 { --c: var(--t1); --cs: var(--t1-soft); }
+.c2 { --c: var(--t2); --cs: var(--t2-soft); }
+.c5 { --c: var(--t5); --cs: var(--t5-soft); }
+
+/* ---- Đầu trang ---- */
+.top { padding-block: 26px 18px; display: flex; flex-direction: column; gap: 18px; }
+.top h1 { margin: 4px 0 0; font-family: var(--f-display); font-weight: 900; text-transform: uppercase; font-size: clamp(2.4rem, 6.5vw, 4.2rem); line-height: 1.02; }
+.top h1 span { color: var(--t2); }
+.toc { display: flex; flex-wrap: wrap; gap: 8px; }
+.toc a { text-decoration: none; color: var(--ink); padding: 6px 12px; border: 1px solid var(--rule); border-radius: 3px; background: var(--card); font-weight: 600; font-size: .9rem; }
+.toc a b { color: var(--c); margin-right: 6px; font-family: var(--f-display); text-transform: uppercase; }
+.figure { background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 14px; overflow-x: auto; }
+.figure svg { display: block; width: 100%; height: auto; min-width: 600px; }
+.cap { font-size: .82rem; color: var(--muted); margin-top: 8px; }
+
+/* ---- Chủ đề ---- */
+.topic { padding-block: 30px 6px; border-top: 3px solid var(--c); margin-top: 26px; }
+.topic-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 16px; margin-bottom: 6px; }
+.topic-head .num { font-family: var(--f-display); font-weight: 900; font-size: 1.05rem; text-transform: uppercase; color: var(--c); letter-spacing: .06em; }
+.topic-head h2 { margin: 0; font-family: var(--f-display); font-weight: 800; text-transform: uppercase; font-size: clamp(2rem, 5vw, 2.9rem); line-height: 1.05; }
+.block { padding-block: 20px; border-top: 1px solid var(--rule); display: flex; flex-direction: column; gap: 12px; }
+.topic-head + .block { border-top: 0; }
+.bhead { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 4px 16px; }
+.bhead h3 { margin: 0; font-size: 1.2rem; }
+.bhead .src { font-size: .74rem; color: var(--muted); font-family: var(--f-mono); }
+.def { max-width: 46rem; color: var(--muted); }
+.def b { color: var(--ink); }
+.formula { font-family: var(--f-mono); font-size: .95rem; background: var(--cs); padding: 3px 9px; border-radius: 3px; color: var(--ink); white-space: nowrap; }
+.lab { background: var(--card); border: 1px solid var(--rule); border-radius: 6px; padding: 16px; display: flex; flex-direction: column; gap: 14px; min-width: 0; }
+.hint { font-size: .78rem; color: var(--muted); display: flex; align-items: center; gap: 6px; }
+.hint::before { content: "↔"; font-weight: 700; color: var(--c); }
+.two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; align-items: center; }
+.btn { font: inherit; font-size: .85rem; font-weight: 600; padding: 7px 12px; border-radius: 3px; border: 1px solid var(--rule); background: var(--card); color: var(--ink); cursor: pointer; min-height: 36px; }
+.btn:hover { border-color: var(--c); }
+.btn.on { background: var(--c); border-color: var(--c); color: var(--card); }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.note { padding: 9px 13px; border-left: 3px solid var(--c); background: var(--cs); font-size: .92rem; }
+
+/* ---- Hai điều kiện ---- */
+.conds { display: grid; grid-template-columns: 1fr 1fr 1.2fr; gap: 12px; align-items: stretch; }
+.cond { display: flex; flex-direction: column; align-items: center; gap: 8px; padding: 14px 10px; border: 2px solid var(--rule); border-radius: 6px; background: var(--paper); cursor: pointer; font: inherit; color: inherit; text-align: center; }
+.cond[aria-pressed="true"] { border-color: var(--c); background: var(--cs); }
+.cond svg { width: 72px; height: 72px; }
+.cond span { font-size: .85rem; font-weight: 600; line-height: 1.3; }
+.cond .st { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.cond[aria-pressed="true"] .st { color: var(--c); }
+.result { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; border-radius: 6px; border: 2px dashed var(--rule); padding: 10px; text-align: center; }
+.result svg { width: 96px; height: 96px; }
+.result .tag { opacity: .15; transition: opacity 300ms, transform 300ms; transform-origin: 70px 30px; transform: rotate(-12deg) scale(.8); }
+.result.yes { border-style: solid; border-color: var(--c); }
+.result.yes .tag { opacity: 1; transform: rotate(0) scale(1); }
+.result b { font-size: .88rem; }
+
+/* ---- Kéo thả ---- */
+.tray { display: flex; flex-wrap: wrap; gap: 8px; min-height: 46px; padding: 8px; border-radius: 4px; background: var(--paper); }
+.chip { touch-action: none; user-select: none; -webkit-user-select: none; cursor: grab; display: inline-flex; align-items: center; gap: 6px; padding: 6px 11px 6px 7px; border-radius: 3px; border: 1px solid var(--rule); background: var(--card); font: inherit; font-size: .86rem; font-weight: 500; color: var(--ink); }
+.chip svg { width: 22px; height: 22px; flex: none; }
+.chip:hover { border-color: var(--c); }
+.chip.sel { outline: 2px solid var(--c); outline-offset: 1px; }
+.chip.placed { cursor: default; background: var(--cs); border-color: transparent; }
+.chip.ghost { position: fixed; z-index: 50; pointer-events: none; box-shadow: 0 10px 24px rgba(0,0,0,.2); transform: rotate(-3deg); }
+.chip.shake { animation: shake 360ms; border-color: var(--bad); }
+@keyframes shake { 25% { transform: translateX(-5px); } 75% { transform: translateX(5px); } }
+.bins { display: grid; gap: 10px; }
+.bins.three { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.bins.two-b { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.bin { min-height: 8.5rem; border: 2px dashed var(--rule); border-radius: 6px; padding: 10px; display: flex; flex-direction: column; gap: 8px; transition: border-color 120ms, background 120ms; }
+.bin.over, .bin.target { border-color: var(--c); background: var(--cs); }
+.bin-h { display: flex; gap: 8px; align-items: center; }
+.bin-h svg { width: 34px; height: 34px; flex: none; }
+.bin-h b { font-size: .84rem; line-height: 1.25; }
+.bin .items { display: flex; flex-wrap: wrap; gap: 6px; }
+.feedback { font-size: .88rem; min-height: 1.4em; color: var(--muted); }
+.feedback.good { color: var(--ok); font-weight: 600; }
+.feedback.bad { color: var(--bad); }
+
+/* ---- Thanh trượt, thanh xếp chồng ---- */
+.slider { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 12px; align-items: center; }
+.slider label { font-size: .88rem; font-weight: 600; }
+.slider output { font-family: var(--f-mono); font-weight: 600; }
+.slider input { grid-column: 1 / -1; width: 100%; accent-color: var(--c); }
+.stack { position: relative; display: flex; height: 40px; border-radius: 3px; overflow: hidden; background: var(--soft); }
+.stack > div { display: flex; align-items: center; justify-content: center; gap: 4px; font-size: .74rem; font-weight: 700; white-space: nowrap; overflow: hidden; transition: width 300ms ease; color: var(--ink); }
+.stack svg { width: 18px; height: 18px; flex: none; }
+.lbl { font-size: .72rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-bottom: 5px; }
+
+/* ---- Ngày lao động ---- */
+.daygrid { display: grid; grid-template-columns: minmax(0, 1fr) 15rem; gap: 20px; align-items: center; }
+.day { position: relative; padding-top: 24px; padding-bottom: 26px; user-select: none; -webkit-user-select: none; }
+.track { position: relative; height: 58px; border-radius: 4px; background: var(--soft); touch-action: none; }
+.seg { position: absolute; top: 0; bottom: 0; display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; overflow: hidden; white-space: nowrap; pointer-events: none; }
+.seg.nec { left: 0; background: var(--t1); color: var(--card); border-right: 2px solid var(--card); }
+.seg.sur { background: var(--t2); color: var(--card); }
+.handle { position: absolute; top: -9px; bottom: -9px; width: 28px; margin-left: -14px; cursor: ew-resize; touch-action: none; display: flex; justify-content: center; z-index: 2; }
+.handle::before { content: ""; width: 5px; border-radius: 3px; background: var(--ink); }
+.handle span { position: absolute; top: -23px; font-family: var(--f-mono); font-size: .72rem; font-weight: 600; white-space: nowrap; background: var(--ink); color: var(--card); padding: 1px 6px; border-radius: 2px; }
+.ticks { position: absolute; left: 0; right: 0; bottom: 4px; height: 16px; font-family: var(--f-mono); font-size: .66rem; color: var(--muted); }
+.ticks span { position: absolute; transform: translateX(-50%); }
+.clock svg { width: 100%; max-width: 15rem; height: auto; display: block; margin: 0 auto; }
+.mbig { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
+.mbig .v { font-family: var(--f-display); font-weight: 900; font-size: 3.2rem; line-height: 1; color: var(--t2); }
+.mbig .eq { font-family: var(--f-mono); font-size: .9rem; color: var(--muted); }
+
+/* ---- Tuần hoàn ---- */
+.circuit text { font-size: 15px; font-weight: 700; fill: var(--ink); }
+.circuit .small { font-size: 12px; font-weight: 500; fill: var(--muted); }
+
+/* ---- Máy và người ---- */
+.factory { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 14px; }
+.factory .lbl { margin-bottom: 6px; }
+.icons { display: flex; flex-wrap: wrap; gap: 4px; min-height: 64px; align-content: flex-start; }
+.icons svg { width: 26px; height: 26px; transition: opacity 250ms; }
+.icons svg.off { opacity: .12; }
+
+/* ---- Cán cân ---- */
+.balance svg { width: 100%; max-width: 30rem; height: auto; display: block; margin: 0 auto; }
+#beam { transition: transform 400ms cubic-bezier(.3,1.4,.5,1); transform-origin: 200px 70px; }
+.split { position: relative; height: 56px; border-radius: 4px; touch-action: none; transition: width 400ms ease; }
+.split .w, .split .p { position: absolute; top: 0; bottom: 0; display: flex; align-items: center; gap: 6px; padding: 0 10px; font-size: .9rem; font-weight: 700; overflow: hidden; white-space: nowrap; color: var(--card); font-family: var(--f-mono); }
+.split .w { left: 0; background: var(--t1); border-radius: 4px 0 0 4px; }
+.split .p { right: 0; background: var(--t2); border-radius: 0 4px 4px 0; justify-content: flex-end; }
+.split .handle span { top: -23px; }
+
+/* ---- Sơ đồ quan hệ ---- */
+.rel svg { width: 100%; height: auto; display: block; max-width: 40rem; margin: 0 auto; }
+.rel .edge { cursor: pointer; }
+.rel .edge line, .rel .edge path { stroke: var(--rule); stroke-width: 4; fill: none; transition: stroke 150ms; }
+.rel .edge circle { fill: var(--card); stroke: var(--rule); stroke-width: 2; transition: fill 150ms, stroke 150ms; }
+.rel .edge text { font-family: var(--f-mono); font-weight: 700; font-size: 14px; fill: var(--ink); pointer-events: none; }
+.rel .edge.on line, .rel .edge.on path { stroke: var(--t5); }
+.rel .edge.on circle { fill: var(--t5); stroke: var(--t5); }
+.rel .edge.on text { fill: var(--card); }
+.rel .edge:focus-visible circle { stroke: var(--t2); stroke-width: 3; }
+.rel .node text { font-size: 13px; font-weight: 700; fill: var(--ink); }
+.relcap { min-height: 4.2rem; padding: 10px 14px; border-left: 3px solid var(--t5); background: var(--t5-soft); font-size: .92rem; }
+.relcap > b { display: block; margin-bottom: 4px; }
+
+.roles { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.role { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 6px; padding: 14px 10px; border: 1px solid var(--rule); border-radius: 6px; background: var(--card); }
+.role svg { width: 46px; height: 46px; }
+.role b { font-size: .88rem; line-height: 1.25; }
+.role span { font-size: .78rem; color: var(--muted); line-height: 1.35; }
+
+footer { padding-block: 30px 46px; color: var(--muted); font-size: .82rem; border-top: 1px solid var(--rule); margin-top: 30px; }
+
+@media (max-width: 760px) {
+  .conds { grid-template-columns: 1fr 1fr; }
+  .result { grid-column: 1 / -1; flex-direction: row; }
+  .daygrid, .two, .factory { grid-template-columns: 1fr; }
+  .roles { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .bins.three { grid-template-columns: 1fr; }
+  .bin { min-height: 5rem; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { transition: none !important; animation: none !important; } }
+
+/* ---- Bổ sung cho bản có lý thuyết đầy đủ ---- */
+.intro { max-width: 50rem; font-size: 1.04rem; margin-bottom: 6px; }
+.grid2 { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 20px; align-items: start; }
+.theory { display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.theory.wide { max-width: none; }
+.t { max-width: 46rem; }
+.pts { margin: 0; padding-left: 1.3rem; display: flex; flex-direction: column; gap: 6px; }
+.q { margin: 0; padding: 12px 16px; border-left: 3px solid var(--c); background: var(--cs); font-style: italic; }
+.q cite { display: block; margin-top: 6px; font-style: normal; font-size: .78rem; color: var(--muted); font-family: var(--f-mono); }
+.fbox { display: flex; flex-direction: column; gap: 4px; padding: 12px 14px; border: 1px solid var(--rule); border-top: 3px solid var(--c); border-radius: 4px; background: var(--card); min-width: 0; }
+.fbox .fl { font-size: .7rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--c); }
+.fbox .f { font-family: var(--f-mono); font-size: 1.05rem; font-weight: 600; color: var(--ink); overflow-wrap: anywhere; }
+.fbox .fd { font-size: .86rem; color: var(--muted); }
+.fbox-row, .cols3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 10px; }
+.explain { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.explain > div { padding: 10px 12px; border-radius: 4px; background: var(--soft); font-size: .86rem; line-height: 1.5; }
+.explain b { display: block; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--c); margin-bottom: 3px; }
+.steps { margin-top: 10px; display: flex; flex-direction: column; gap: 3px; font-family: var(--f-mono); font-size: .88rem; padding: 10px 12px; border: 1px dashed var(--rule); border-radius: 4px; }
+.steps .res { font-weight: 700; color: var(--t2); font-size: 1rem; }
+.calc { width: 100%; border-collapse: collapse; margin-top: 8px; font-size: .86rem; }
+.calc td { padding: 4px 0; border-bottom: 1px solid var(--rule); }
+.calc td:last-child { text-align: right; }
+.calc .sum td { font-weight: 700; color: var(--t2); border-bottom: 0; }
+.legend { display: flex; flex-wrap: wrap; gap: 4px 12px; font-size: .76rem; color: var(--muted); margin-top: 6px; }
+.legend i { display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+.mini { width: 100%; max-width: 22rem; height: auto; }
+.daygrid { grid-template-columns: minmax(0, 1fr) 14rem; }
+@media (max-width: 900px) { .grid2 { grid-template-columns: 1fr; } }
+@media (max-width: 760px) { .explain { grid-template-columns: 1fr; } }
+
+/* ---- Thanh điều hướng & các trang ---- */
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 30; background: var(--paper); }
+.bar { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 25; background: color-mix(in srgb, var(--paper) 92%, transparent); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--rule); }
+.barin { display: flex; align-items: center; gap: 18px; padding-block: 8px; }
+.brand { text-decoration: none; color: var(--ink); font-family: var(--f-display); font-weight: 800; text-transform: uppercase; font-size: 1.05rem; line-height: 1; white-space: nowrap; }
+.brand span { display: block; font-size: .78rem; color: var(--t2); letter-spacing: .06em; }
+.tabs { display: flex; gap: 4px; overflow-x: auto; scrollbar-width: none; min-width: 0; }
+.tabs::-webkit-scrollbar { display: none; }
+.tabs a { flex: none; text-decoration: none; color: var(--muted); font-weight: 600; font-size: .88rem; padding: 7px 11px; border-radius: 3px; display: inline-flex; gap: 6px; align-items: baseline; }
+.tabs a b { font-family: var(--f-display); color: var(--c, var(--ink)); }
+.tabs a:hover { color: var(--ink); background: var(--soft); }
+.tabs a[aria-current="page"] { color: var(--ink); background: var(--card); box-shadow: inset 0 -3px 0 var(--c, var(--ink)); }
+.cg { --c: var(--t2); --cs: var(--t2-soft); }
+.view { animation: viewIn 260ms ease; }
+@keyframes viewIn { from { opacity: .4; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.view.topic { margin-top: 0; border-top: 0; padding-top: 26px; }
+.cards { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; padding-bottom: 20px; }
+.tcard { position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 4px; padding: 16px 16px 18px; min-height: 9.5rem; border: 1px solid var(--rule); border-top: 4px solid var(--c); border-radius: 6px; background: var(--card); text-decoration: none; color: var(--ink); transition: transform 150ms, box-shadow 150ms; }
+.tcard:hover { transform: translateY(-3px); box-shadow: 0 10px 24px -12px rgba(0,0,0,.35); }
+.tcard .tn { font-family: var(--f-display); font-weight: 800; text-transform: uppercase; color: var(--c); }
+.tcard b { font-size: 1.1rem; line-height: 1.25; max-width: 80%; }
+.tcard span:not(.tn) { font-size: .82rem; color: var(--muted); max-width: 80%; }
+.tcard svg { position: absolute; right: -8px; bottom: -8px; width: 70px; height: 70px; opacity: .18; }
+.pager { display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; padding-block: 18px 6px; border-top: 1px solid var(--rule); margin-top: 8px; }
+.pager .btn { text-decoration: none; display: inline-flex; align-items: center; }
+.gamegrid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 24px; align-items: start; padding-top: 10px; }
+.poster { position: relative; display: block; aspect-ratio: 4 / 3; max-width: 100%; border-radius: 8px; overflow: hidden; text-decoration: none; background: linear-gradient(180deg, #070a13, #121a2e); box-shadow: 0 20px 40px -20px rgba(0,0,0,.6); }
+.poster canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
+.poster::after { content: ""; position: absolute; inset: 0; background: radial-gradient(ellipse 70% 50% at 30% 110%, rgba(243,155,74,.35), transparent 60%), linear-gradient(90deg, rgba(10,14,24,.92), rgba(10,14,24,.25)); }
+.ptxt { position: absolute; left: 7%; top: 12%; z-index: 2; display: flex; flex-direction: column; font-family: var(--f-display); font-weight: 900; text-transform: uppercase; line-height: .92; }
+.p24 { font-size: clamp(4rem, 12vw, 7rem); color: #f39b4a; text-shadow: 0 0 30px rgba(243,155,74,.5); }
+.pdi { font-size: clamp(2.2rem, 6vw, 3.6rem); color: #ece8de; }
+.psub { margin-top: 8px; font-size: clamp(1rem, 2.4vw, 1.4rem); font-weight: 700; color: #86a3ff; letter-spacing: .06em; }
+.play { position: absolute; right: 5%; bottom: 7%; z-index: 2; background: #f39b4a; color: #1a1006; font-weight: 800; padding: 10px 16px; border-radius: 4px; transition: transform 150ms; }
+.poster:hover .play { transform: scale(1.05); }
+.btn.big { align-self: flex-start; text-decoration: none; background: var(--t2); border-color: var(--t2); color: var(--card); font-size: 1rem; padding: 11px 20px; }
+.linkline { font-size: .8rem; color: var(--muted); overflow-wrap: anywhere; }
+.howto { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 8px; counter-reset: h; }
+.howto li { counter-increment: h; padding: 10px 12px 10px 40px; position: relative; background: var(--soft); border-radius: 4px; font-size: .86rem; }
+.howto li::before { content: counter(h); position: absolute; left: 12px; top: 9px; font-family: var(--f-display); font-weight: 900; font-size: 1.3rem; color: var(--t2); }
+.howto b { display: block; }
+.row a.btn { text-decoration: none; }
+@media (max-width: 860px) { .cards { grid-template-columns: 1fr 1fr; } .gamegrid { grid-template-columns: 1fr; } }
+@media (max-width: 560px) { .brand { display: none; } .howto { grid-template-columns: 1fr; } }
+.namehero { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px 36px; align-items: end; }
+.wordmark { margin: 0; display: flex; align-items: flex-end; gap: .12em; font-family: var(--f-display); font-weight: 900; text-transform: uppercase; line-height: .8; }
+.wm-a, .wm-b { font-size: clamp(3rem, 9vw, 6.2rem); color: var(--ink); }
+.wordmark .wm-a { color: var(--ink); } .wordmark .wm-b { color: var(--muted); margin-left: .18em; } .wordmark .wm-5 { margin-left: .06em; }
+.wm-5 { font-size: clamp(7rem, 22vw, 15rem); color: var(--t2); line-height: .72; letter-spacing: -.02em; text-shadow: 6px 6px 0 var(--t2-soft); }
+.nh-side { display: flex; flex-direction: column; gap: 10px; padding-bottom: 6px; min-width: 0; }
+.tagline { font-size: clamp(1.05rem, 2vw, 1.3rem); line-height: 1.45; max-width: 30rem; }
+.tagline b { color: var(--t2); }
+.hours { display: grid; grid-template-columns: repeat(8, minmax(0, 1fr)); gap: 3px; max-width: 26rem; }
+.hours span { font-family: var(--f-mono); font-weight: 600; font-size: .8rem; text-align: center; padding: 7px 0; border-radius: 2px; background: var(--t1); color: var(--card); }
+.hours span.s { background: var(--t2); }
+.hours span:nth-child(5) { box-shadow: 0 0 0 2px var(--paper), 0 0 0 4px var(--t2); }
+.hours-l { display: grid; grid-template-columns: 1fr 1fr; max-width: 26rem; font-size: .76rem; color: var(--muted); }
+.hours-l span:last-child { text-align: right; }
+.brand em { font-style: normal; color: var(--t2); }
+@media (max-width: 760px) { .namehero { grid-template-columns: 1fr; } }
+</style>
+<style>[hidden]{display:none!important} :root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)} body{margin:0}</style>
+</head>
+<body>
+<!-- Bộ biểu tượng dùng chung -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-person" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4" fill="currentColor"/><path d="M4 22c0-5 3.6-8 8-8s8 3 8 8z" fill="currentColor"/></symbol>
+    <symbol id="i-boss" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4" fill="currentColor"/><path d="M4 22c0-5 3.6-8 8-8s8 3 8 8z" fill="currentColor"/><path d="M12 14l-1.6 2.5L12 21l1.6-4.5z" fill="var(--card)"/></symbol>
+    <symbol id="i-gear" viewBox="0 0 24 24"><path d="M10.5 2h3l.5 2.6 2 .9 2.2-1.5 2.1 2.1-1.5 2.2.9 2 2.6.5v3l-2.6.5-.9 2 1.5 2.2-2.1 2.1-2.2-1.5-2 .9-.5 2.6h-3l-.5-2.6-2-.9-2.2 1.5-2.1-2.1 1.5-2.2-.9-2L2 13.5v-3l2.6-.5.9-2L4 5.8l2.1-2.1L8.3 5.2l2-.9z" fill="currentColor"/><circle cx="12" cy="12" r="3.4" fill="var(--card)"/></symbol>
+    <symbol id="i-house" viewBox="0 0 24 24"><path d="M3 11L12 3l9 8v10h-6v-6H9v6H3z" fill="currentColor"/></symbol>
+    <symbol id="i-bowl" viewBox="0 0 24 24"><path d="M3 11h18a9 9 0 0 1-18 0z" fill="currentColor"/><path d="M8 3c0 2 2 2 2 4M13 3c0 2 2 2 2 4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></symbol>
+    <symbol id="i-music" viewBox="0 0 24 24"><path d="M9 18V5l11-2v13" stroke="currentColor" stroke-width="2" fill="none"/><circle cx="6.5" cy="18" r="3" fill="currentColor"/><circle cx="17.5" cy="16" r="3" fill="currentColor"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24"><path d="M3 4h7a2 2 0 0 1 2 2v14a2 2 0 0 0-2-2H3zM21 4h-7a2 2 0 0 0-2 2v14a2 2 0 0 1 2-2h7z" fill="currentColor"/></symbol>
+    <symbol id="i-cap" viewBox="0 0 24 24"><path d="M1 9l11-5 11 5-11 5z" fill="currentColor"/><path d="M6 12v5c3 2.5 9 2.5 12 0v-5l-6 2.7z" fill="currentColor"/></symbol>
+    <symbol id="i-baby" viewBox="0 0 24 24"><circle cx="12" cy="9" r="6" fill="currentColor"/><circle cx="9.8" cy="9" r="1" fill="var(--card)"/><circle cx="14.2" cy="9" r="1" fill="var(--card)"/><path d="M6 22c0-3.5 2.7-6 6-6s6 2.5 6 6z" fill="currentColor"/></symbol>
+    <symbol id="i-shirt" viewBox="0 0 24 24"><path d="M8 3l4 2 4-2 6 4-3 4-2-1v11H7V10l-2 1-3-4z" fill="currentColor"/></symbol>
+    <symbol id="i-cotton" viewBox="0 0 24 24"><circle cx="8" cy="10" r="5" fill="currentColor"/><circle cx="16" cy="10" r="5" fill="currentColor"/><circle cx="12" cy="15" r="5" fill="currentColor"/></symbol>
+    <symbol id="i-chip" viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2" fill="currentColor"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4" stroke="currentColor" stroke-width="2"/></symbol>
+    <symbol id="i-server" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="7" rx="1.5" fill="currentColor"/><rect x="3" y="14" width="18" height="7" rx="1.5" fill="currentColor"/><circle cx="7" cy="6.5" r="1.2" fill="var(--card)"/><circle cx="7" cy="17.5" r="1.2" fill="var(--card)"/></symbol>
+    <symbol id="i-coin" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><text x="12" y="16.5" text-anchor="middle" font-size="12" font-weight="800" fill="var(--card)" font-family="Arial">₫</text></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 2l8 3v6c0 5-3.5 9-8 11-4.5-2-8-6-8-11V5z" fill="currentColor"/><path d="M8 12l3 3 5-6" stroke="var(--card)" stroke-width="2" fill="none"/></symbol>
+    <symbol id="i-scale" viewBox="0 0 24 24"><path d="M12 3v17M5 20h14M4 7h16" stroke="currentColor" stroke-width="2" fill="none"/><path d="M4 7l-3 6a3 3 0 0 0 6 0zM20 7l-3 6a3 3 0 0 0 6 0z" fill="currentColor"/></symbol>
+    <symbol id="i-eye" viewBox="0 0 24 24"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z" fill="currentColor"/><circle cx="12" cy="12" r="3.5" fill="var(--card)"/></symbol>
+    <symbol id="i-hands" viewBox="0 0 24 24"><path d="M2 12l5-5 4 2 3-2 3 1 5 4-3 3-2-1-3 3-3-1-2 2-3-2z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
+
+<header class="bar"><div class="wrap barin">
+  <a class="brand" href="#trang-chu">Giờ thứ <em>5</em><span>KTCT Mác – Lênin</span></a>
+  <nav class="tabs" aria-label="Các trang">
+    <a href="#trang-chu" data-tab="trang-chu">Tổng quan</a>
+    <a href="#chuong-3-1" data-tab="chuong-3-1" class="c1"><b>Ch.3 · I.1</b>Nguồn gốc giá trị thặng dư</a>
+    <a href="#chuong-3-2" data-tab="chuong-3-2" class="c2"><b>Ch.3 · I.2–II</b>Sản xuất GTTD, tích lũy</a>
+    <a href="#chuong-5" data-tab="chuong-5" class="c5"><b>Ch.5 · III</b>Quan hệ lợi ích</a>
+    <a href="#tro-choi" data-tab="tro-choi" class="cg"><b>▶</b>Trò chơi</a>
+  </nav>
+</div></header>
+<div class="wrap">
+<section class="view" id="v-trang-chu" data-view="trang-chu">
+<div class="top">
+    <div>
+      <div class="namehero">
+        <h1 class="wordmark"><span class="wm-a">Giờ</span><span class="wm-b">thứ</span><span class="wm-5">5</span></h1>
+        <div class="nh-side">
+          <p class="eyebrow">Kinh tế chính trị Mác – Lênin · Chương 3 và Chương 5</p>
+          <p class="tagline">Bốn giờ đầu, bạn làm ra tiền lương của mình.<br><b>Từ giờ thứ năm, bạn làm ra giá trị thặng dư.</b></p>
+          <div class="hours" aria-label="Ngày lao động 8 giờ: giờ 1 đến 4 là thời gian tất yếu, giờ 5 đến 8 là thời gian thặng dư"><span>1</span><span>2</span><span>3</span><span>4</span><span class="s">5</span><span class="s">6</span><span class="s">7</span><span class="s">8</span></div>
+          <div class="hours-l"><span>t · trả lương</span><span>t′ · thặng dư</span></div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Bức tranh tổng thể -->
+    <div class="figure" role="img" aria-label="Sơ đồ tổng thể: người lao động bán sức lao động, tạo ra giá trị mới gồm v và m, v thành tiền lương, m thành lợi nhuận, Nhà nước điều hòa lợi ích.">
+      <svg viewBox="0 0 900 270">
+        <defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker></defs>
+        <!-- Người lao động -->
+        <g transform="translate(20,95)" style="color:var(--t1)"><use href="#i-person" width="70" height="70"/></g>
+        <text x="55" y="190" text-anchor="middle" font-size="14" font-weight="700" fill="var(--ink)">Người lao động</text>
+        <rect x="0" y="203" width="110" height="20" rx="3" fill="var(--t1-soft)"/><text x="55" y="217" text-anchor="middle" font-size="11" font-weight="700" fill="var(--t1)">CHƯƠNG 3 · I.1.b</text>
+        <line x1="110" y1="128" x2="205" y2="128" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar)"/>
+        <text x="157" y="118" text-anchor="middle" font-size="12" fill="var(--muted)">bán sức lao động</text>
+        <!-- Sản xuất -->
+        <g transform="translate(215,92)" style="color:var(--cgray)"><use href="#i-gear" width="52" height="52"/></g>
+        <text x="241" y="166" text-anchor="middle" font-size="12" fill="var(--muted)">sản xuất</text>
+        <line x1="275" y1="118" x2="320" y2="118" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar)"/>
+        <!-- Giá trị hàng hóa -->
+        <text x="330" y="78" font-size="12" font-weight="700" fill="var(--muted)">GIÁ TRỊ HÀNG HÓA  G = c + v + m</text>
+        <rect x="330" y="92" width="190" height="52" fill="var(--cgray)" opacity=".55"/><text x="425" y="123" text-anchor="middle" font-size="15" font-weight="700" fill="var(--ink)">c</text>
+        <rect x="520" y="92" width="80" height="52" fill="var(--t1)"/><text x="560" y="123" text-anchor="middle" font-size="15" font-weight="700" fill="var(--card)">v</text>
+        <rect x="600" y="92" width="80" height="52" fill="var(--t2)"/><text x="640" y="123" text-anchor="middle" font-size="15" font-weight="700" fill="var(--card)">m</text>
+        <path d="M520 150v8h160v-8" stroke="var(--ink)" stroke-width="1.5" fill="none"/><text x="600" y="174" text-anchor="middle" font-size="12" fill="var(--ink)">giá trị mới do lao động tạo ra</text>
+        <rect x="470" y="182" width="140" height="20" rx="3" fill="var(--t2-soft)"/><text x="540" y="196" text-anchor="middle" font-size="11" font-weight="700" fill="var(--t2)">CHƯƠNG 3 · I.1.c – I.3</text>
+        <!-- chia -->
+        <path d="M560 92 C560 40, 700 40, 735 60" stroke="var(--t1)" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+        <path d="M640 144 C640 220, 700 225, 735 205" stroke="var(--t2)" stroke-width="2" fill="none" marker-end="url(#ar)"/>
+        <g transform="translate(742,44)" style="color:var(--t1)"><use href="#i-coin" width="30" height="30"/></g><text x="780" y="64" font-size="14" font-weight="700" fill="var(--ink)">Tiền lương</text>
+        <g transform="translate(742,190)" style="color:var(--t2)"><use href="#i-coin" width="30" height="30"/></g><text x="780" y="210" font-size="14" font-weight="700" fill="var(--ink)">Lợi nhuận</text>
+        <!-- Nhà nước -->
+        <rect x="752" y="100" width="134" height="56" rx="6" fill="var(--t5-soft)" stroke="var(--t5)"/>
+        <g transform="translate(762,111)" style="color:var(--t5)"><use href="#i-scale" width="32" height="32"/></g>
+        <text x="800" y="124" font-size="13" font-weight="700" fill="var(--ink)">Nhà nước</text><text x="800" y="141" font-size="11" fill="var(--muted)">điều hòa lợi ích</text>
+        <line x1="819" y1="98" x2="819" y2="80" stroke="var(--t5)" stroke-width="1.5" stroke-dasharray="3 3"/><line x1="819" y1="158" x2="819" y2="182" stroke="var(--t5)" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <rect x="755" y="236" width="110" height="20" rx="3" fill="var(--t5-soft)"/><text x="810" y="250" text-anchor="middle" font-size="11" font-weight="700" fill="var(--t5)">CHƯƠNG 5 · III</text>
+      </svg>
+    </div>
+    <p class="cap">Đọc từ trái sang phải: người lao động bán sức lao động, tạo ra giá trị mới (v + m). Phần v trở thành tiền lương, phần m trở thành lợi nhuận, và Nhà nước điều hòa quan hệ giữa hai phần.</p>
+  </div>
+  <div class="cards">
+    <a class="tcard c1" href="#chuong-3-1"><span class="tn">Chương 3 · Mục I.1</span><b>Nguồn gốc của giá trị thặng dư</b><span>Công thức chung, hàng hóa sức lao động, c và v, tiền công, tuần hoàn</span><svg aria-hidden="true" style="color:var(--t1)"><use href="#i-person"/></svg></a>
+    <a class="tcard c2" href="#chuong-3-2"><span class="tn">Chương 3 · Mục I.2 – II</span><b>Sản xuất giá trị thặng dư và tích lũy</b><span>m′, M, phương pháp tuyệt đối, tương đối, tích lũy tư bản</span><svg aria-hidden="true" style="color:var(--t2)"><use href="#i-gear"/></svg></a>
+    <a class="tcard c5" href="#chuong-5"><span class="tn">Chương 5 · Mục III</span><b>Các quan hệ lợi ích kinh tế</b><span>Thống nhất, mâu thuẫn, vai trò Nhà nước</span><svg aria-hidden="true" style="color:var(--t5)"><use href="#i-scale"/></svg></a>
+    <a class="tcard cg" href="#tro-choi"><span class="tn">Trò chơi</span><b>24h Đi Làm</b><span>Áp dụng Chương 3 và Chương 5 vào 8 quyết định</span><svg aria-hidden="true" style="color:var(--t2)"><use href="#i-coin"/></svg></a>
+  </div>
+</section>
+  <!-- ================= CHỦ ĐỀ 1 ================= -->
+  <section id="v-chuong-3-1" data-view="chuong-3-1" hidden class="view topic c1">
+    <div class="topic-head"><span class="num">Chương 3 · Mục I.1</span><h2>Nguồn gốc của giá trị thặng dư</h2></div>
+    <p class="intro">Tiền không tự sinh ra tiền. Mục I.1 giải thích giá trị thặng dư từ đâu mà có: từ một hàng hóa đặc biệt trên thị trường, <b>sức lao động</b>.</p>
+
+    <div class="block">
+      <div class="bhead"><h3>I.1.a · Công thức chung của tư bản</h3><span class="src">GT tr. 75</span></div>
+      <div class="theory wide">
+        <div class="fbox-row">
+          <div class="fbox"><span class="fl">Lưu thông hàng hóa giản đơn</span><span class="f">H – T – H</span><span class="fd">bán để mua; mục đích là giá trị sử dụng</span></div>
+          <div class="fbox"><span class="fl">Công thức chung của tư bản</span><span class="f">T – H – T′ &nbsp;(T′ = T + ΔT)</span><span class="fd">mua để bán; mục đích là giá trị tăng thêm</span></div>
+        </div>
+        <p class="t">ΔT không sinh ra trong lưu thông (lời khi bán thì lỗ khi mua), mà <b>trong sản xuất</b>, nhờ một hàng hóa đặc biệt: sức lao động (mục I.1.b).</p>
+      </div>
+    </div>
+
+<div class="block">
+      <div class="bhead"><h3>I.1.b · Hàng hóa sức lao động: hai điều kiện</h3><span class="src">GT tr. 75–76</span></div>
+      <div class="grid2">
+        <div class="theory">
+          <blockquote class="q">“Sức lao động hay năng lực lao động là toàn bộ những năng lực thể chất và tinh thần tồn tại trong cơ thể, trong một con người đang sống, và được người đó đem ra vận dụng mỗi khi sản xuất ra một giá trị sử dụng nào đó.”<cite>C. Mác, trích trong giáo trình</cite></blockquote>
+          <p class="t">Chỉ thành hàng hóa khi có <b>đủ cả hai</b> điều kiện:</p>
+          <ol class="pts">
+            <li><b>Tự do về thân thể</b>: được tự quyết định bán sức lao động.</li>
+            <li><b>Không có đủ tư liệu sản xuất</b> để tự sản xuất, nên buộc phải bán sức lao động.</li>
+          </ol>
+        </div>
+        <div class="lab">
+          <div class="conds">
+            <button class="cond" id="cond1" aria-pressed="false">
+              <svg viewBox="0 0 72 72" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="5" stroke-linecap="round" style="color:var(--c)"><rect x="8" y="26" width="24" height="18" rx="9"/><rect id="link2" x="40" y="26" width="24" height="18" rx="9"/></g><path id="crack" d="M34 18l4 8-4 4 4 6" stroke="var(--bad)" stroke-width="3" fill="none"/></svg>
+              <span>Tự do về thân thể</span><span class="st" id="st1">Chưa</span>
+            </button>
+            <button class="cond" id="cond2" aria-pressed="false">
+              <svg viewBox="0 0 72 72" aria-hidden="true"><rect x="10" y="28" width="52" height="30" rx="4" fill="none" stroke="currentColor" stroke-width="4" style="color:var(--c)"/><path d="M26 28v-8h20v8" fill="none" stroke="currentColor" stroke-width="4" style="color:var(--c)"/><g id="tools" style="color:var(--cgray)"><use href="#i-gear" x="18" y="34" width="18" height="18"/><use href="#i-gear" x="38" y="34" width="18" height="18"/></g></svg>
+              <span>Không có tư liệu sản xuất</span><span class="st" id="st2">Chưa</span>
+            </button>
+            <div class="result" id="condResult" aria-live="polite">
+              <svg viewBox="0 0 96 96" aria-hidden="true"><use href="#i-person" x="8" y="14" width="66" height="66" style="color:var(--c)"/><g class="tag"><path d="M58 18h26v18l-13 13-13-13z" fill="var(--t2)"/><circle cx="71" cy="25" r="3" fill="var(--card)"/></g></svg>
+              <b id="condText">Chưa thành hàng hóa</b>
+            </div>
+          </div>
+          <p class="note" id="condNote" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="explain">
+        <div><b>Cách thử</b>Bấm hai ô để bật, tắt từng điều kiện.</div>
+        <div><b>Bạn sẽ thấy</b>Xích đứt = tự do; hộp dụng cụ trống = không có tư liệu sản xuất. Bật cả hai thì người lao động được gắn “thẻ giá”.</div>
+        <div><b>Ý nghĩa</b>Nô lệ không tự bán được sức lao động; thợ thủ công có xưởng thì không cần bán.</div>
+      </div>
+    </div>
+
+<div class="block">
+      <div class="bhead"><h3>I.1.b · Hai thuộc tính của hàng hóa sức lao động</h3><span class="src">GT tr. 76–78</span></div>
+      <div class="grid2">
+        <div class="theory">
+          <p class="t"><b>Giá trị</b>: đo gián tiếp qua giá trị tư liệu sinh hoạt để tái sản xuất sức lao động, gồm 3 bộ phận:</p>
+          <ol class="pts">
+            <li>Sinh hoạt (vật chất, tinh thần) của bản thân người lao động.</li>
+            <li>Phí tổn đào tạo.</li>
+            <li>Nuôi con của người lao động.</li>
+          </ol>
+          <p class="t"><b>Giá trị sử dụng</b> đặc biệt: khi được dùng, nó <b>tạo ra giá trị mới lớn hơn giá trị của chính nó</b>. Đây là chìa khóa của giá trị thặng dư.</p>
+          <p class="t">Ngoài ra, nó mang yếu tố <b>tinh thần và lịch sử</b>: nhu cầu thay đổi theo nước, theo thời kỳ.</p>
+        </div>
+        <div class="lab" data-sort="lp">
+          <div class="lbl">Kéo mỗi khoản chi vào đúng bộ phận</div>
+          <div class="tray" data-tray></div>
+          <div class="bins three">
+            <div class="bin" data-bin="1"><div class="bin-h"><svg style="color:var(--t1)"><use href="#i-house"/></svg><b>① Sinh hoạt bản thân<br><small style="font-weight:400;color:var(--muted)">vật chất + tinh thần</small></b></div><div class="items"></div></div>
+            <div class="bin" data-bin="2"><div class="bin-h"><svg style="color:var(--t5)"><use href="#i-cap"/></svg><b>② Đào tạo</b></div><div class="items"></div></div>
+            <div class="bin" data-bin="3"><div class="bin-h"><svg style="color:var(--t2)"><use href="#i-baby"/></svg><b>③ Nuôi con</b></div><div class="items"></div></div>
+          </div>
+          <div class="row" style="justify-content:space-between"><p class="feedback" data-feedback aria-live="polite"></p><button class="btn" data-reset>Xếp lại</button></div>
+        </div>
+      </div>
+      <div class="explain">
+        <div><b>Cách thử</b>Kéo thẻ vào ô ①, ②, ③. Điện thoại: chạm thẻ rồi chạm ô.</div>
+        <div><b>Bạn sẽ thấy</b>Đúng thì thẻ nằm lại kèm giải thích; sai thì thẻ rung, quay về và có gợi ý.</div>
+        <div><b>Ý nghĩa</b>Giải trí cũng cần thiết (năng lực tinh thần); nuôi con cũng tính vào vì xã hội cần lao động thế hệ sau.</div>
+      </div>
+    </div>
+
+<div class="block">
+      <div class="bhead"><h3>I.1.c–d · Sự sản xuất giá trị thặng dư; tư bản bất biến và tư bản khả biến</h3><span class="src">GT tr. 78–83</span></div>
+      <div class="grid2">
+        <div class="theory">
+          <p class="t"><b>c (bất biến)</b>: tư liệu sản xuất (máy, nguyên liệu). Giá trị chuyển nguyên vẹn vào sản phẩm, không tạo ra m.</p>
+          <p class="t"><b>v (khả biến)</b>: tiền mua sức lao động. Người lao động tạo ra giá trị mới lớn hơn v, tức v <b>biến đổi về lượng</b>.</p>
+          <div class="fbox"><span class="fl">Giá trị hàng hóa</span><span class="f">G = c + (v + m)</span><span class="fd">c: lao động quá khứ chuyển vào · (v + m): giá trị mới do lao động sống tạo ra</span></div>
+          <p class="t">Máy móc, kể cả người máy, chỉ là tiền đề tăng năng suất, không tự sinh ra m.</p>
+        </div>
+        <div class="lab" data-sort="cv">
+          <div class="lbl">Kéo mỗi khoản vào c hoặc v</div>
+          <div class="tray" data-tray></div>
+          <div class="bins two-b">
+            <div class="bin" data-bin="c"><div class="bin-h"><svg style="color:var(--cgray)"><use href="#i-gear"/></svg><b>c · Tư bản bất biến</b></div><div class="items"></div></div>
+            <div class="bin" data-bin="v"><div class="bin-h"><svg style="color:var(--t1)"><use href="#i-person"/></svg><b>v · Tư bản khả biến</b></div><div class="items"></div></div>
+          </div>
+          <div class="row" style="justify-content:space-between"><p class="feedback" data-feedback aria-live="polite"></p><button class="btn" data-reset>Xếp lại</button></div>
+          <div>
+            <div class="lbl">Ví dụ kéo sợi trong giáo trình · 8 giờ lao động · đơn vị USD</div>
+            <div class="stack" style="height:48px"><div style="width:77.9%;background:color-mix(in srgb,var(--cgray) 55%,var(--card))"><svg style="color:var(--ink)"><use href="#i-cotton"/></svg>c = 106</div><div style="width:11.05%;background:var(--t1);color:var(--card)">v 15</div><div style="width:11.05%;background:var(--t2);color:var(--card)">m 15</div></div>
+            <table class="calc"><tbody>
+              <tr><td>c: 100 kg bông + 6 hao mòn máy</td><td class="mono">106</td></tr>
+              <tr><td>v: tiền công 1 ngày (8 giờ)</td><td class="mono">15</td></tr>
+              <tr><td>Tổng tư bản ứng ra c + v</td><td class="mono">121</td></tr>
+              <tr><td>Giá trị sợi bán được G</td><td class="mono">136</td></tr>
+              <tr class="sum"><td>Giá trị thặng dư m = 136 − 121</td><td class="mono">15</td></tr>
+            </tbody></table>
+          </div>
+        </div>
+      </div>
+      <div class="explain">
+        <div><b>Cách thử</b>Kéo thẻ vào ô c hoặc v.</div>
+        <div><b>Bạn sẽ thấy</b>Máy, bông, robot, điện thuộc c; tiền lương thuộc v. Bảng dưới tính ví dụ kéo sợi.</div>
+        <div><b>Ý nghĩa</b>4 giờ đầu tạo đủ 15 USD bằng tiền công; 4 giờ sau tạo thêm 15 USD là m.</div>
+      </div>
+    </div>
+
+<div class="block">
+      <div class="bhead"><h3>I.1.đ · Tiền công</h3><span class="src">GT tr. 83</span></div>
+      <div class="grid2">
+        <div class="theory">
+          <div class="fbox"><span class="fl">Theo nguyên tắc ngang giá</span><span class="f">Tiền công = Giá trị sức lao động = ① + ② + ③</span></div>
+          <p class="t"><b>Tiền công</b> là giá cả của sức lao động, thực chất là một phần giá trị mới do chính người lao động tạo ra.</p>
+          <p class="t">Thực tế, tiền công khó phản ánh đủ cả ba bộ phận giá trị.</p>
+          
+        </div>
+        <div class="lab">
+          <div class="slider"><label for="wage">Tiền công một tháng (ví dụ)</label><output id="wageOut" class="mono">4,0 triệu</output><input type="range" id="wage" min="1" max="10" step="0.5" value="4"></div>
+          <div><div class="lbl">Giá trị sức lao động: cần để tái sản xuất sức lao động</div><div class="stack" id="needBar"></div><div class="legend" id="needLegend"></div></div>
+          <div><div class="lbl">Tiền công nhận được</div><div class="stack" id="wageBar"></div></div>
+          <p class="note" id="wageVerdict" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="explain">
+        <div><b>Cách thử</b>Kéo thanh trượt tiền công (1–10 triệu).</div>
+        <div><b>Bạn sẽ thấy</b>Thanh trên: giá trị sức lao động (8 triệu, ví dụ). Thanh dưới: tiền công; gạch đỏ là phần thiếu.</div>
+        <div><b>Ý nghĩa</b>Trả dưới giá trị thì người lao động không tái sản xuất đủ sức lao động.</div>
+      </div>
+    </div>
+
+<div class="block">
+      <div class="bhead"><h3>I.1.e · Tuần hoàn của tư bản</h3><span class="src">GT tr. 84–86</span></div>
+      <div class="figure circuit" role="img" aria-label="Tuần hoàn tư bản: T mua H gồm sức lao động và tư liệu sản xuất, qua sản xuất thành H phẩy, bán thành T phẩy lớn hơn T.">
+        <svg viewBox="0 0 900 200">
+          <defs><marker id="ar2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="var(--muted)"/></marker></defs>
+          <path id="loop" d="M80 100 H 820" fill="none"/>
+          <g><circle cx="80" cy="100" r="44" fill="var(--t2-soft)" stroke="var(--t2)" stroke-width="2"/><text x="80" y="106" text-anchor="middle">T</text><text class="small" x="80" y="170" text-anchor="middle">tư bản tiền tệ</text></g>
+          <line x1="128" y1="100" x2="212" y2="100" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar2)"/><text class="small" x="170" y="90" text-anchor="middle">mua</text>
+          <g><rect x="218" y="40" width="130" height="120" rx="8" fill="var(--card)" stroke="var(--rule)" stroke-width="2"/><text x="283" y="34" text-anchor="middle">H</text>
+            <use href="#i-person" x="236" y="58" width="36" height="36" style="color:var(--t1)"/><text class="small" x="254" y="112" text-anchor="middle">SLĐ</text>
+            <use href="#i-gear" x="294" y="58" width="36" height="36" style="color:var(--cgray)"/><text class="small" x="312" y="112" text-anchor="middle">TLSX</text>
+            <text class="small" x="283" y="148" text-anchor="middle">tư bản sản xuất</text></g>
+          <line x1="354" y1="100" x2="440" y2="100" stroke="var(--muted)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ar2)"/>
+          <g><rect x="446" y="62" width="130" height="76" rx="8" fill="var(--t2)"/><text x="511" y="98" text-anchor="middle" style="fill:var(--card)">SẢN XUẤT (SX)</text><text x="511" y="118" text-anchor="middle" style="fill:var(--card);font-size:12px;font-weight:500">m được tạo ra ở đây</text></g>
+          <line x1="582" y1="100" x2="640" y2="100" stroke="var(--muted)" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ar2)"/>
+          <g><rect x="646" y="62" width="64" height="76" rx="8" fill="var(--card)" stroke="var(--t2)" stroke-width="2"/><text x="678" y="106" text-anchor="middle">H′</text><text class="small" x="678" y="160" text-anchor="middle">tư bản hàng hóa</text></g>
+          <line x1="716" y1="100" x2="766" y2="100" stroke="var(--muted)" stroke-width="2" marker-end="url(#ar2)"/><text class="small" x="741" y="90" text-anchor="middle">bán</text>
+          <g><circle cx="820" cy="100" r="54" fill="var(--t2-soft)" stroke="var(--t2)" stroke-width="3"/><text x="820" y="98" text-anchor="middle">T′</text><text x="820" y="118" text-anchor="middle" style="fill:var(--t2);font-size:13px">= T + m</text><text class="small" x="820" y="178" text-anchor="middle">thực hiện giá trị thặng dư</text></g>
+          <circle r="7" fill="var(--t2)"><animateMotion dur="5s" repeatCount="indefinite"><mpath href="#loop"/></animateMotion></circle>
+        </svg>
+      </div>
+      <div class="explain">
+        <div><b>Cách đọc</b>Chấm tròn đi qua 3 giai đoạn: mua, sản xuất, bán.</div>
+        <div><b>Bạn sẽ thấy</b>Nét đứt là sản xuất. Bán được H′ thì thu về T′ = T + m.</div>
+        <div><b>Ý nghĩa</b>m sinh ra trong sản xuất, nhưng phải bán được hàng mới thu về thành tiền.</div>
+      </div>
+    </div>
+
+  <nav class="pager"><a class="btn" href="#trang-chu">← Tổng quan</a><a class="btn on" href="#chuong-3-2">Ch.3 · Mục I.2 – II →</a></nav>
+</section>
+
+  <section id="v-chuong-3-2" data-view="chuong-3-2" hidden class="view topic c2">
+    <div class="topic-head"><span class="num">Chương 3 · Mục I.2 – II</span><h2>Sản xuất giá trị thặng dư và tích lũy tư bản</h2></div>
+    <p class="intro"><b>Giá trị thặng dư (m)</b>: phần giá trị mới dôi ra ngoài giá trị sức lao động, do người lao động tạo ra và thuộc về người mua sức lao động.</p>
+
+    <div class="block">
+      <div class="bhead"><h3>I.2 – I.3 · Bản chất, tỷ suất, khối lượng và các phương pháp sản xuất giá trị thặng dư</h3><span class="src">GT tr. 87–92</span></div>
+      <div class="theory wide">
+        <p class="t">Ngày lao động = <b>thời gian tất yếu (t)</b>, tạo ra giá trị bằng tiền công, + <b>thời gian thặng dư (t′)</b>, tạo ra m.</p>
+        <div class="fbox-row">
+          <div class="fbox"><span class="fl">Tỷ suất giá trị thặng dư</span><span class="f">m′ = m / v × 100% = t′ / t × 100%</span><span class="fd">phản ánh trình độ khai thác sức lao động</span></div>
+          <div class="fbox"><span class="fl">Khối lượng giá trị thặng dư</span><span class="f">M = m′ × V</span><span class="fd">V: tổng tư bản khả biến · phản ánh quy mô</span></div>
+        </div>
+        <div class="fbox-row">
+          <div class="fbox c2b"><span class="fl">Phương pháp tuyệt đối</span><span class="fd" style="color:var(--ink)">Kéo dài ngày lao động (hoặc tăng cường độ), t không đổi. Bị giới hạn bởi sinh lý con người.</span></div>
+          <div class="fbox c2b"><span class="fl">Phương pháp tương đối</span><span class="fd" style="color:var(--ink)">Tăng năng suất xã hội để rút ngắn t, nên t′ dài ra dù ngày không đổi.</span></div>
+          <div class="fbox c2b"><span class="fl">Giá trị thặng dư siêu ngạch</span><span class="fd" style="color:var(--ink)">Đi trước về kỹ thuật nên giá trị cá biệt thấp hơn giá trị xã hội. Là biến tướng của phương pháp tương đối.</span></div>
+        </div>
+      </div>
+      <div class="lab">
+        <div class="daygrid">
+          <div>
+            <div class="lbl">Ngày lao động (kéo hai vạch đen)</div>
+            <div class="day">
+              <div class="track" id="track">
+                <div class="seg nec" id="segNec">t</div>
+                <div class="seg sur" id="segSur">t′</div>
+                <div class="handle" id="hNec" role="slider" tabindex="0" aria-label="Thời gian lao động tất yếu" aria-valuemin="1" aria-valuemax="15"><span></span></div>
+                <div class="handle" id="hDay" role="slider" tabindex="0" aria-label="Độ dài ngày lao động" aria-valuemin="2" aria-valuemax="16"><span></span></div>
+              </div>
+              <div class="ticks" id="ticks"></div>
+            </div>
+            <div class="row" role="group" aria-label="Ví dụ trong giáo trình">
+              <button class="btn" data-preset="8,4">Gốc: 8h, t = 4h</button>
+              <button class="btn" data-preset="10,4">Tuyệt đối: 10h</button>
+              <button class="btn" data-preset="8,2">Tương đối: t = 2h</button>
+              <button class="btn" data-preset="6,1">Tương đối: 6h, t = 1h</button>
+            </div>
+            <div class="steps" id="mSteps"></div>
+            <div class="slider" style="margin-top:12px"><label for="workers">Số công nhân được thuê (mỗi người v = 15 USD/ngày)</label><output id="workersOut">10</output><input type="range" id="workers" min="1" max="50" value="10"></div>
+            <div class="steps" id="MSteps"></div>
+          </div>
+          <div class="clock" role="img" aria-label="Đồng hồ 24 giờ: phần lao động so với phần còn lại để ăn, ngủ, nghỉ ngơi">
+            <svg viewBox="0 0 200 200" id="clockSvg"></svg>
+            <div class="legend" style="justify-content:center"><span><i style="background:var(--t1)"></i>t</span><span><i style="background:var(--t2)"></i>t′</span><span><i style="background:var(--soft)"></i>nghỉ ngơi</span></div>
+          </div>
+        </div>
+        <p class="note" id="methodNote" aria-live="polite"></p>
+      </div>
+      <div class="explain">
+        <div><b>Cách thử</b>Kéo vạch trái (t), vạch phải (độ dài ngày), hoặc bấm 4 ví dụ của giáo trình. Kéo “Số công nhân” để tính M.</div>
+        <div><b>Bạn sẽ thấy</b>m′ và M tính lại từng bước; đồng hồ 24 giờ chuyển đỏ khi giờ nghỉ dưới 12 giờ.</div>
+        <div><b>Ý nghĩa</b>8h → 10h: m′ 150%, nhưng chạm giới hạn sinh lý. t 4h → 2h: m′ 300% mà ngày không dài thêm.</div>
+      </div>
+    </div>
+
+<div class="block">
+      <div class="bhead"><h3>II.1 – II.3 · Tích lũy tư bản: bản chất, nhân tố, hệ quả</h3><span class="src">GT tr. 92–97</span></div>
+      <div class="grid2">
+        <div class="theory">
+          <p class="t"><b>Bản chất:</b> biến m thành tư bản để tái sản xuất mở rộng. Nguồn gốc duy nhất là giá trị thặng dư.</p>
+          <p class="t"><b>Nhân tố ảnh hưởng:</b> m′, năng suất lao động, hiệu quả sử dụng máy móc, đại lượng tư bản ứng trước.</p>
+          <p class="t"><b>Ba hệ quả:</b></p>
+          <ol class="pts">
+            <li>Tăng <b>cấu tạo hữu cơ</b> của tư bản: <span class="formula">c / v</span> có xu hướng tăng.</li>
+            <li>Tăng <b>tích tụ</b> và <b>tập trung</b> tư bản.</li>
+            <li>Tăng chênh lệch thu nhập: <b>bần cùng hóa tương đối</b> và <b>tuyệt đối</b>.</li>
+          </ol>
+          <svg viewBox="0 0 360 110" class="mini" role="img" aria-label="Tích tụ: một khối tư bản cao thêm nhờ phần m của chính nó. Tập trung: ba khối tư bản nhỏ gộp thành một khối lớn.">
+            <rect x="14" y="54" width="30" height="34" rx="2" fill="var(--t2-soft)" stroke="var(--t2)"/><text x="29" y="75" text-anchor="middle" font-size="11" font-weight="700" fill="var(--t2)">K</text>
+            <text x="60" y="76" font-size="16" fill="var(--muted)">→</text>
+            <rect x="84" y="54" width="30" height="34" rx="2" fill="var(--t2-soft)" stroke="var(--t2)"/><text x="99" y="75" text-anchor="middle" font-size="11" font-weight="700" fill="var(--t2)">K</text>
+            <rect x="84" y="32" width="30" height="22" rx="2" fill="var(--t2)"/><text x="99" y="47" text-anchor="middle" font-size="11" font-weight="700" fill="var(--card)">+m</text>
+            <line x1="6" y1="88.5" x2="124" y2="88.5" stroke="var(--rule)"/>
+            <text x="6" y="106" font-size="11" fill="var(--muted)">Tích tụ: tư bản hóa m của mình</text>
+            <rect x="188" y="62" width="20" height="26" rx="2" fill="var(--t5-soft)" stroke="var(--t5)"/><text x="198" y="79" text-anchor="middle" font-size="10" font-weight="700" fill="var(--t5)">A</text>
+            <rect x="212" y="62" width="20" height="26" rx="2" fill="var(--t5-soft)" stroke="var(--t5)"/><text x="222" y="79" text-anchor="middle" font-size="10" font-weight="700" fill="var(--t5)">B</text>
+            <rect x="236" y="62" width="20" height="26" rx="2" fill="var(--t5-soft)" stroke="var(--t5)"/><text x="246" y="79" text-anchor="middle" font-size="10" font-weight="700" fill="var(--t5)">C</text>
+            <text x="266" y="80" font-size="16" fill="var(--muted)">→</text>
+            <rect x="290" y="50" width="62" height="38" rx="2" fill="var(--t5-soft)" stroke="var(--t5)"/><text x="321" y="74" text-anchor="middle" font-size="11" font-weight="700" fill="var(--t5)">A+B+C</text>
+            <line x1="180" y1="88.5" x2="356" y2="88.5" stroke="var(--rule)"/>
+            <text x="356" y="106" text-anchor="end" font-size="11" fill="var(--muted)">Tập trung: hợp nhất nhiều tư bản</text>
+          </svg>
+        </div>
+        <div class="lab">
+          <div class="slider"><label for="auto">Phần vốn đầu tư vào máy móc (tổng vốn 200)</label><output id="autoOut">50%</output><input type="range" id="auto" min="30" max="95" step="5" value="50"></div>
+          <div class="factory">
+            <div><div class="lbl">Máy móc · c = <span id="cVal" class="mono">100</span></div><div class="icons" id="machines"></div></div>
+            <div><div class="lbl">Người lao động · v = <span id="vVal" class="mono">100</span></div><div class="icons" id="workersIcons"></div></div>
+          </div>
+          <div class="mbig"><span class="v" id="cvRatio" style="font-size:2.4rem">1,0</span><span class="eq">c / v · <b id="cvOut" style="color:var(--bad)">0</b> người bị dôi ra so với lúc đầu (20 người)</span></div>
+        </div>
+      </div>
+      <div class="explain">
+        <div><b>Cách thử</b>Kéo thanh trượt phần vốn cho máy móc (tổng vốn giữ 200).</div>
+        <div><b>Bạn sẽ thấy</b>1 máy = 10 c, 1 người = 5 v. Máy sáng lên, người mờ dần, c/v tăng.</div>
+        <div><b>Ý nghĩa</b>v giảm tương đối nên có nguy cơ thừa nhân khẩu: giàu có ở một phía, bần cùng ở phía kia.</div>
+      </div>
+    </div>
+
+  <nav class="pager"><a class="btn" href="#chuong-3-1">← Ch.3 · Mục I.1</a><a class="btn on" href="#chuong-5">Ch.5 · Mục III →</a></nav>
+</section>
+
+  <section id="v-chuong-5" data-view="chuong-5" hidden class="view topic c5">
+    <div class="topic-head"><span class="num">Chương 5 · Mục III</span><h2>Các quan hệ lợi ích kinh tế ở Việt Nam</h2></div>
+    <p class="intro">Giá trị mới (v + m) được chia giữa các chủ thể. Cách chia đó tạo ra quan hệ lợi ích, và Nhà nước bảo đảm sự hài hòa.</p>
+
+    <div class="block">
+      <div class="bhead"><h3>III.1.a – b · Lợi ích kinh tế và quan hệ lợi ích kinh tế</h3><span class="src">GT tr. 176–181</span></div>
+      <div class="theory wide">
+        <div class="cols3">
+          <div class="fbox"><span class="fl">Khái niệm</span><span class="fd" style="color:var(--ink)"><b>Lợi ích kinh tế</b> là lợi ích vật chất thu được khi thực hiện các hoạt động kinh tế.</span></div>
+          <div class="fbox"><span class="fl">Bản chất và biểu hiện</span><span class="fd" style="color:var(--ink)">Chủ doanh nghiệp: <b>lợi nhuận</b>. Người lao động: <b>thu nhập</b>.</span></div>
+          <div class="fbox"><span class="fl">Vai trò</span><span class="fd" style="color:var(--ink)"><b>Động lực trực tiếp</b> của hoạt động kinh tế; <b>cơ sở</b> của các lợi ích khác.</span></div>
+        </div>
+        <p class="t"><b>Quan hệ lợi ích kinh tế</b> là tương tác giữa các chủ thể nhằm xác lập lợi ích kinh tế, chịu ảnh hưởng của 4 nhân tố:</p>
+        <div class="roles">
+          <div class="role"><svg style="color:var(--t5)"><use href="#i-gear"/></svg><b>Trình độ lực lượng sản xuất</b><span>càng cao, lợi ích càng dễ thống nhất</span></div>
+          <div class="role"><svg style="color:var(--t5)"><use href="#i-boss"/></svg><b>Địa vị trong quan hệ sản xuất</b><span>trước hết là quan hệ sở hữu</span></div>
+          <div class="role"><svg style="color:var(--t5)"><use href="#i-coin"/></svg><b>Chính sách phân phối thu nhập</b><span>của Nhà nước</span></div>
+          <div class="role"><svg style="color:var(--t5)"><use href="#i-hands"/></svg><b>Hội nhập kinh tế quốc tế</b><span>tác động mạnh, nhiều chiều</span></div>
+        </div>
+      </div>
+    </div>
+
+<div class="block">
+      <div class="bhead"><h3>III.1.b · Sự thống nhất và mâu thuẫn trong quan hệ lợi ích</h3><span class="src">GT tr. 182–187</span></div>
+      <div class="grid2">
+        <div class="theory">
+          <p class="t"><b>Thống nhất:</b> doanh nghiệp hiệu quả thì người lao động có việc, có lương; người lao động được đảm bảo lợi ích thì làm việc tích cực hơn.</p>
+          <p class="t"><b>Mâu thuẫn:</b> tại một thời điểm, kết quả là xác định nên bên này tăng thì bên kia giảm.</p>
+          <div class="fbox"><span class="fl">Mâu thuẫn tại một thời điểm</span><span class="f">Lương + Lợi nhuận = Kết quả (cố định)</span><span class="fd">Mâu thuẫn lợi ích là cội nguồn của các xung đột xã hội</span></div>
+        </div>
+        <div class="lab">
+          <div class="balance" aria-hidden="true">
+            <svg viewBox="0 0 400 190">
+              <rect x="190" y="70" width="20" height="100" fill="var(--rule)"/><rect x="140" y="168" width="120" height="12" rx="3" fill="var(--rule)"/>
+              <g id="beam">
+                <rect x="40" y="65" width="320" height="10" rx="5" fill="var(--ink)"/>
+                <line x1="70" y1="70" x2="70" y2="110" stroke="var(--ink)" stroke-width="2"/><line x1="330" y1="70" x2="330" y2="110" stroke="var(--ink)" stroke-width="2"/>
+                <g id="panW"><path d="M20 110h100a50 22 0 0 1-100 0z" fill="var(--t1)"/><use href="#i-person" x="52" y="78" width="36" height="36" style="color:var(--t1)"/></g>
+                <g id="panP"><path d="M280 110h100a50 22 0 0 1-100 0z" fill="var(--t2)"/><use href="#i-boss" x="312" y="78" width="36" height="36" style="color:var(--t2)"/></g>
+              </g>
+              <circle cx="200" cy="70" r="8" fill="var(--t5)"/>
+            </svg>
+          </div>
+          <div class="split" id="split">
+            <div class="w" id="splitW"><span id="splitWv"></span></div>
+            <div class="p" id="splitP"><span id="splitPv"></span></div>
+            <div class="handle" id="hSplit" role="slider" tabindex="0" aria-label="Phần dành cho tiền lương" aria-valuemin="10" aria-valuemax="90"><span></span></div>
+          </div>
+          <div class="row" role="group" aria-label="Năng suất lao động">
+            <span class="lbl" style="margin:0">Năng suất lao động</span>
+            <button class="btn on" data-prod="1">×1</button><button class="btn" data-prod="1.5">×1,5</button><button class="btn" data-prod="2">×2</button>
+          </div>
+          <p class="note" id="splitNote" aria-live="polite"></p>
+        </div>
+      </div>
+      <div class="explain">
+        <div><b>Cách thử</b>Kéo vạch chia lương (xanh) và lợi nhuận (cam); bấm ×1,5 hoặc ×2 để tăng năng suất.</div>
+        <div><b>Bạn sẽ thấy</b>Ở ×1 tổng luôn là 10: bên này tăng thì bên kia giảm. Tăng năng suất thì cả hai đĩa cân to lên.</div>
+        <div><b>Ý nghĩa</b>Bánh cố định thì mâu thuẫn; bánh to ra thì thống nhất, nếu chia hợp lý.</div>
+      </div>
+    </div>
+
+<div class="block">
+      <div class="bhead"><h3>III.1.b · Một số quan hệ lợi ích cơ bản và phương thức thực hiện</h3><span class="src">GT tr. 185–191</span></div>
+      <div class="grid2">
+        <div class="theory">
+          <p class="t">Mỗi quan hệ đều vừa thống nhất, vừa mâu thuẫn.</p>
+          <p class="t"><b>Hai phương thức thực hiện lợi ích kinh tế:</b></p>
+          <ol class="pts">
+            <li>Theo <b>nguyên tắc thị trường</b>.</li>
+            <li>Theo <b>chính sách Nhà nước và tổ chức xã hội</b>, để khắc phục hạn chế của thị trường.</li>
+          </ol>
+        </div>
+        <div class="lab rel">
+          <svg viewBox="0 0 520 300" id="relSvg">
+            <g class="edge" data-rel="0" tabindex="0" role="button" aria-label="Quan hệ 1"><line x1="120" y1="95" x2="400" y2="95"/><circle cx="260" cy="95" r="16"/><text x="260" y="100" text-anchor="middle">1</text></g>
+            <g class="edge" data-rel="1" tabindex="0" role="button" aria-label="Quan hệ 2"><line x1="430" y1="125" x2="430" y2="205"/><circle cx="430" cy="165" r="16"/><text x="430" y="170" text-anchor="middle">2</text></g>
+            <g class="edge" data-rel="2" tabindex="0" role="button" aria-label="Quan hệ 3"><line x1="90" y1="125" x2="90" y2="205"/><circle cx="90" cy="165" r="16"/><text x="90" y="170" text-anchor="middle">3</text></g>
+            <g class="edge" data-rel="3" tabindex="0" role="button" aria-label="Quan hệ 4"><path d="M150 230 Q260 300 370 230"/><line x1="260" y1="140" x2="260" y2="262"/><circle cx="260" cy="200" r="16"/><text x="260" y="205" text-anchor="middle">4</text></g>
+            <g class="node"><circle cx="90" cy="95" r="30" fill="var(--t1-soft)"/><use href="#i-person" x="68" y="73" width="44" height="44" style="color:var(--t1)"/><text x="90" y="54" text-anchor="middle">Người LĐ</text></g>
+            <g class="node"><circle cx="90" cy="235" r="30" fill="var(--t1-soft)"/><use href="#i-person" x="68" y="213" width="44" height="44" style="color:var(--t1)"/><text x="90" y="285" text-anchor="middle">Người LĐ</text></g>
+            <g class="node"><circle cx="430" cy="95" r="30" fill="var(--t2-soft)"/><use href="#i-boss" x="408" y="73" width="44" height="44" style="color:var(--t2)"/><text x="430" y="54" text-anchor="middle">Người SDLĐ</text></g>
+            <g class="node"><circle cx="430" cy="235" r="30" fill="var(--t2-soft)"/><use href="#i-boss" x="408" y="213" width="44" height="44" style="color:var(--t2)"/><text x="430" y="285" text-anchor="middle">Người SDLĐ</text></g>
+            <g class="node"><rect x="200" y="20" width="120" height="40" rx="20" fill="var(--t5-soft)" stroke="var(--t5)"/><text x="260" y="45" text-anchor="middle">Xã hội</text><line x1="260" y1="60" x2="260" y2="78" stroke="var(--t5)" stroke-dasharray="3 3"/></g>
+          </svg>
+          <div class="relcap" id="relCap" aria-live="polite"></div>
+        </div>
+      </div>
+      <div class="explain">
+        <div><b>Cách thử</b>Bấm các số 1–4 trên sơ đồ.</div>
+        <div><b>Bạn sẽ thấy</b>Đường nối sáng lên, khung dưới giải thích mặt thống nhất và mâu thuẫn.</div>
+        <div><b>Ý nghĩa</b>LĐ = lao động, SDLĐ = sử dụng lao động.</div>
+      </div>
+    </div>
+
+<div class="block">
+      <div class="bhead"><h3>III.2 · Vai trò của Nhà nước trong bảo đảm hài hòa các quan hệ lợi ích</h3><span class="src">GT tr. 191–197</span></div>
+      <div class="theory wide">
+        <p class="t"><b>Hài hòa lợi ích</b>: hạn chế mặt mâu thuẫn, khuyến khích mặt thống nhất. Nhà nước dùng công cụ <b>giáo dục, pháp luật, hành chính, kinh tế</b>.</p>
+        <div class="roles">
+          <div class="role"><svg style="color:var(--t5)"><use href="#i-shield"/></svg><b>a) Bảo vệ lợi ích hợp pháp</b><span>tạo môi trường thuận lợi</span></div>
+          <div class="role"><svg style="color:var(--t5)"><use href="#i-scale"/></svg><b>b) Điều hòa lợi ích</b><span>qua chính sách phân phối thu nhập</span></div>
+          <div class="role"><svg style="color:var(--t5)"><use href="#i-eye"/></svg><b>c) Kiểm soát, ngăn ngừa</b><span>thu nhập bất hợp pháp, lợi ích nhóm</span></div>
+          <div class="role"><svg style="color:var(--t5)"><use href="#i-hands"/></svg><b>d) Giải quyết mâu thuẫn</b><span>ngăn ngừa là chính</span></div>
+        </div>
+        <blockquote class="q" style="margin-top:12px">Nguyên tắc giải quyết mâu thuẫn giữa các lợi ích kinh tế là phải có sự tham gia của các bên liên quan, có nhân nhượng và phải đặt lợi ích đất nước lên trên hết.<cite>Giáo trình tr. 197</cite></blockquote>
+      </div>
+    </div>
+
+  <nav class="pager"><a class="btn" href="#chuong-3-2">← Ch.3 · Mục I.2 – II</a><a class="btn on" href="#tro-choi">Trò chơi · 24h Đi Làm →</a></nav>
+</section>
+<section class="view topic cg" id="v-tro-choi" data-view="tro-choi" hidden>
+  <div class="topic-head"><span class="num">Trò chơi</span><h2>24h Đi Làm: Đêm Không Bao Giờ Tắt</h2></div>
+  <div class="gamegrid">
+    <a class="poster" href="https://mellow-phoenix-bbd3b8.netlify.app" target="_blank" rel="noopener">
+      <canvas id="posterCity" aria-hidden="true"></canvas>
+      <div class="ptxt"><span class="p24">24h</span><span class="pdi">Đi Làm</span><span class="psub">Đêm không bao giờ tắt</span></div>
+      <span class="play">▶ Chơi ngay</span>
+    </a>
+    <div class="theory">
+      <p class="t">Visual novel trên web: bạn là Trưởng phòng Nhân sự của công ty công nghệ S-Tech, đưa ra 8 quyết định qua 4 màn. Mỗi lựa chọn làm thay đổi <b>Lợi nhuận</b>, <b>Sức khỏe người lao động</b> và <b>mức tuân thủ</b>, kèm giải thích bằng lý thuyết Chương 3 và Chương 5.</p>
+      <a class="btn big" href="https://mellow-phoenix-bbd3b8.netlify.app" target="_blank" rel="noopener">Mở trò chơi ↗</a>
+      <p class="linkline mono">mellow-phoenix-bbd3b8.netlify.app</p>
+      <ol class="howto">
+        <li><b>Đọc</b>Nhấp hoặc bấm Space để đọc tiếp lời thoại.</li>
+        <li><b>Chọn</b>Mỗi điểm quyết định có 3 phương án (phím 1–3).</li>
+        <li><b>Hiểu</b>Sau mỗi lựa chọn, hộp tri thức giải thích khái niệm và chỉ số m′.</li>
+        <li><b>Khám phá</b>Chơi lại để mở đủ 6 kết cục; tiến trình tự lưu.</li>
+      </ol>
+      <div class="row"><span class="lbl" style="margin:0">Ôn lại trước khi chơi:</span><a class="btn" href="#chuong-3-1">Ch.3 · I.1</a><a class="btn" href="#chuong-3-2">Ch.3 · I.2 – II</a><a class="btn" href="#chuong-5">Ch.5 · III</a></div>
+    </div>
+  </div>
+</section>
+  <footer>Nguồn: Giáo trình Kinh tế chính trị Mác – Lênin (dành cho bậc đại học hệ không chuyên lý luận chính trị), Bộ GD&amp;ĐT, NXB Chính trị quốc gia Sự thật, 2021, Chương 3 và 5 (GT = giáo trình). Ví dụ kéo sợi lấy từ giáo trình; các con số khác là minh họa.</footer>
+</div>
+<script>
+(function () {
+  'use strict';
+  const $ = (id) => document.getElementById(id);
+  const fmt = (n, d = 1) => (Math.round(n * 10 ** d) / 10 ** d).toFixed(d).replace('.', ',');
+  const fh = (h) => (h % 1 ? fmt(h) : String(h)) + 'h';
+  const icon = (id, color) => `<svg style="color:${color}" aria-hidden="true"><use href="#${id}"/></svg>`;
+
+  // ---------- Hai điều kiện ----------
+  function updCond() {
+    const a = $('cond1').getAttribute('aria-pressed') === 'true', b = $('cond2').getAttribute('aria-pressed') === 'true';
+    $('st1').textContent = a ? 'Có' : 'Chưa'; $('st2').textContent = b ? 'Có' : 'Chưa';
+    $('crack').style.opacity = a ? 1 : 0; $('link2').setAttribute('x', a ? 46 : 40);
+    $('tools').style.opacity = b ? .12 : 1;
+    $('condResult').classList.toggle('yes', a && b);
+    $('condText').textContent = a && b ? 'Sức lao động thành hàng hóa' : !a && !b ? 'Chưa thành hàng hóa' : !a ? 'Không tự do thì không tự bán được' : 'Có TLSX thì tự sản xuất được';
+    $('condNote').innerHTML = a && b ? 'Đủ hai điều kiện: người lao động vừa <b>có quyền</b> bán, vừa <b>buộc phải</b> bán sức lao động để sống. Sức lao động xuất hiện trên thị trường như một hàng hóa.'
+      : !a && !b ? 'Chưa bật điều kiện nào. Hãy bấm vào hai ô bên trên.'
+      : !a ? 'Mới có điều kiện 2. Người không tự do về thân thể (ví dụ nô lệ) thuộc về người khác, nên không thể tự đem sức lao động ra bán.'
+      : 'Mới có điều kiện 1. Người còn tư liệu sản xuất (ruộng đất, xưởng, công cụ) có thể tự sản xuất hàng hóa để bán, nên chưa buộc phải bán sức lao động.';
+  }
+  ['cond1', 'cond2'].forEach((id) => $(id).addEventListener('click', () => { const e = $(id); e.setAttribute('aria-pressed', String(e.getAttribute('aria-pressed') !== 'true')); updCond(); }));
+  updCond();
+
+  // ---------- Kéo thả ----------
+  const SORTS = {
+    lp: { items: [['Tiền thuê nhà', '1', 'i-house'], ['Ăn uống', '1', 'i-bowl'], ['Giải trí, nghỉ ngơi', '1', 'i-music'], ['Khóa học nghề', '2', 'i-book'], ['Học đại học', '2', 'i-cap'], ['Sữa cho con', '3', 'i-baby'], ['Quần áo cho con', '3', 'i-shirt']],
+      hint: { '1': 'Khoản để chính người lao động sống và hồi phục, kể cả nhu cầu tinh thần.', '2': 'Khoản để có tay nghề: phí tổn đào tạo.', '3': 'Khoản dành cho thế hệ lao động tiếp theo.' },
+      done: 'Đúng hết! Tiền công chỉ ngang giá khi bù đủ cả 3 bộ phận.' },
+    cv: { items: [['Máy kéo sợi', 'c', 'i-gear'], ['Bông nguyên liệu', 'c', 'i-cotton'], ['Robot, phần mềm AI', 'c', 'i-chip'], ['Máy chủ, điện', 'c', 'i-server'], ['Lương kỹ sư', 'v', 'i-person'], ['Lương công nhân', 'v', 'i-person']],
+      hint: { c: 'Tư liệu sản xuất: chỉ chuyển giá trị sang sản phẩm.', v: 'Tiền mua sức lao động: tạo ra giá trị mới.' },
+      done: 'Đúng hết! Robot hay AI cũng chỉ là máy móc, thuộc c.' }
+  };
+  const ICOL = { '1': 'var(--t1)', '2': 'var(--t5)', '3': 'var(--t2)', c: 'var(--cgray)', v: 'var(--t1)' };
+  document.querySelectorAll('[data-sort]').forEach((lab) => {
+    const cfg = SORTS[lab.dataset.sort], tray = lab.querySelector('[data-tray]'), fb = lab.querySelector('[data-feedback]');
+    const bins = Array.from(lab.querySelectorAll('.bin')); let selected = null, placed = 0;
+    function build() {
+      tray.innerHTML = ''; bins.forEach((b) => { b.querySelector('.items').innerHTML = ''; }); placed = 0; selected = null; fb.textContent = ''; fb.className = 'feedback';
+      cfg.items.slice().sort(() => Math.random() - .5).forEach(([label, ans, ic]) => {
+        const c = document.createElement('button'); c.type = 'button'; c.className = 'chip'; c.dataset.ans = ans;
+        c.innerHTML = icon(ic, ICOL[ans]) + label;
+        c.addEventListener('pointerdown', (e) => startDrag(e, c));
+        c.addEventListener('click', () => { if (c.classList.contains('placed') || c.dataset.dragged) return; if (selected) selected.classList.remove('sel'); selected = selected === c ? null : c; bins.forEach((b) => b.classList.toggle('target', !!selected)); if (selected) c.classList.add('sel'); });
+        tray.appendChild(c);
+      });
+    }
+    bins.forEach((b) => b.addEventListener('click', () => { if (selected) drop(selected, b); }));
+    function drop(chip, bin) {
+      bins.forEach((b) => b.classList.remove('target', 'over')); chip.classList.remove('sel'); selected = null;
+      if (chip.dataset.ans === bin.dataset.bin) {
+        chip.classList.add('placed'); chip.disabled = true; bin.querySelector('.items').appendChild(chip); placed++;
+        fb.className = 'feedback good'; fb.textContent = placed === cfg.items.length ? cfg.done : 'Đúng. ' + cfg.hint[bin.dataset.bin];
+      } else { chip.classList.remove('shake'); void chip.offsetWidth; chip.classList.add('shake'); fb.className = 'feedback bad'; fb.textContent = 'Chưa đúng. ' + cfg.hint[chip.dataset.ans]; }
+    }
+    function startDrag(e, chip) {
+      if (chip.classList.contains('placed') || e.button > 0) return;
+      const sx = e.clientX, sy = e.clientY; let ghost = null, over = null; chip.setPointerCapture(e.pointerId);
+      const move = (ev) => {
+        if (!ghost && Math.hypot(ev.clientX - sx, ev.clientY - sy) < 6) return;
+        if (!ghost) { ghost = chip.cloneNode(true); ghost.classList.add('ghost'); ghost.classList.remove('sel'); document.body.appendChild(ghost); chip.style.opacity = '.35'; }
+        ghost.style.left = (ev.clientX - ghost.offsetWidth / 2) + 'px'; ghost.style.top = (ev.clientY - ghost.offsetHeight / 2) + 'px';
+        const el = document.elementFromPoint(ev.clientX, ev.clientY), b = el && el.closest('.bin'), nb = b && bins.includes(b) ? b : null;
+        if (nb !== over) { if (over) over.classList.remove('over'); over = nb; if (over) over.classList.add('over'); }
+      };
+      const up = () => {
+        chip.removeEventListener('pointermove', move); chip.removeEventListener('pointerup', up); chip.removeEventListener('pointercancel', up);
+        if (ghost) { ghost.remove(); chip.style.opacity = ''; chip.dataset.dragged = '1'; setTimeout(() => { delete chip.dataset.dragged; }, 50); if (over) drop(chip, over); }
+      };
+      chip.addEventListener('pointermove', move); chip.addEventListener('pointerup', up); chip.addEventListener('pointercancel', up);
+    }
+    lab.querySelector('[data-reset]').addEventListener('click', build); build();
+  });
+
+  // ---------- Tiền công ----------
+  const NEEDS = [['Nhà', 2.5, 'var(--t1)', 'i-house'], ['Ăn', 2, 'color-mix(in srgb,var(--t1) 65%,var(--card))', 'i-bowl'], ['Tinh thần', .8, 'color-mix(in srgb,var(--t1) 35%,var(--card))', 'i-music'], ['Đào tạo', .7, 'var(--t5)', 'i-book'], ['Nuôi con', 2, 'var(--t2)', 'i-baby']];
+  const TOTAL = NEEDS.reduce((s, n) => s + n[1], 0), SCALE = 10;
+  $('needLegend').innerHTML = NEEDS.map((n) => `<span><i style="background:${n[2]}"></i>${n[0]} ${fmt(n[1])}tr</span>`).join('') + `<span><b>Tổng ${fmt(TOTAL)}tr</b></span>`;
+  $('needBar').innerHTML = NEEDS.map((n) => `<div style="width:${n[1] / SCALE * 100}%;background:${n[2]};color:var(--card)" title="${n[0]} ${fmt(n[1])}tr">${icon(n[3], 'var(--card)')}${n[1] >= 1 ? fmt(n[1]) : ''}</div>`).join('');
+  function updWage() {
+    const w = +$('wage').value, short = Math.max(0, TOTAL - w); $('wageOut').textContent = fmt(w) + ' triệu';
+    $('wageBar').innerHTML = `<div style="width:${w / SCALE * 100}%;background:var(--ink);color:var(--card)">${fmt(w)}tr</div>` + (short > 0 ? `<div style="width:${short / SCALE * 100}%;background:repeating-linear-gradient(135deg,transparent 0 5px,color-mix(in srgb,var(--bad) 40%,transparent) 5px 10px);color:var(--bad)">thiếu ${fmt(short)}</div>` : '');
+    $('wageVerdict').innerHTML = short > 0 ? `Thiếu <b>${fmt(short)} triệu</b>: trả <b>dưới giá trị</b>, người lao động phải làm thêm nơi khác hoặc cắt bớt ăn, nghỉ, học.` : (w === TOTAL ? `Đúng <b>ngang giá</b>. Dù vậy, người lao động vẫn tạo ra giá trị lớn hơn ${fmt(TOTAL)} triệu (xem Chương 3, mục I.1.c).` : `Đủ để tái sản xuất sức lao động, còn dư để tích lũy.`);
+  }
+  $('wage').addEventListener('input', updWage); updWage();
+
+  // ---------- Ngày lao động + đồng hồ 24h ----------
+  const MAXH = 16; let day = 8, nec = 4; const track = $('track');
+  $('ticks').innerHTML = [0, 4, 8, 12, 16].map((h) => `<span style="left:${h / MAXH * 100}%">${h}h</span>`).join('');
+  const NS = 'http://www.w3.org/2000/svg';
+  function arc(a0, a1, r) { const p = (a) => [100 + r * Math.sin(a / 24 * 2 * Math.PI), 100 - r * Math.cos(a / 24 * 2 * Math.PI)]; const [x0, y0] = p(a0), [x1, y1] = p(a1); return `M${x0.toFixed(2)} ${y0.toFixed(2)} A${r} ${r} 0 ${a1 - a0 > 12 ? 1 : 0} 1 ${x1.toFixed(2)} ${y1.toFixed(2)}`; }
+  function drawClock() {
+    const s = $('clockSvg'); const rest = 24 - day;
+    let h = `<circle cx="100" cy="100" r="78" fill="none" stroke="var(--soft)" stroke-width="26"/>`;
+    h += `<path d="${arc(0, nec, 78)}" stroke="var(--t1)" stroke-width="26" fill="none"/>`;
+    h += `<path d="${arc(nec, day, 78)}" stroke="var(--t2)" stroke-width="26" fill="none"/>`;
+    for (let i = 0; i < 24; i += 6) { const a = i / 24 * 2 * Math.PI; h += `<text x="${100 + 56 * Math.sin(a)}" y="${104 - 56 * Math.cos(a)}" text-anchor="middle" font-size="10" fill="var(--muted)" font-family="JetBrains Mono, monospace">${i}</text>`; }
+    h += `<text x="100" y="96" text-anchor="middle" font-size="26" font-weight="800" fill="${rest < 12 ? 'var(--bad)' : 'var(--ink)'}" font-family="Big Shoulders Display, Impact, sans-serif">${fh(rest)}</text>`;
+    h += `<text x="100" y="114" text-anchor="middle" font-size="10" fill="var(--muted)">còn lại để ăn, ngủ,</text><text x="100" y="126" text-anchor="middle" font-size="10" fill="var(--muted)">nghỉ ngơi</text>`;
+    s.innerHTML = h;
+  }
+  function renderDay() {
+    const pct = (h) => (h / MAXH * 100) + '%';
+    $('segNec').style.width = pct(nec); $('segNec').textContent = nec >= 1.5 ? 't ' + fh(nec) : '';
+    $('segSur').style.left = pct(nec); $('segSur').style.width = pct(day - nec); $('segSur').textContent = day - nec >= 1.5 ? 't′ ' + fh(day - nec) : '';
+    $('hNec').style.left = pct(nec); $('hDay').style.left = pct(day);
+    $('hNec').querySelector('span').textContent = 't'; $('hDay').querySelector('span').textContent = fh(day);
+    $('hNec').setAttribute('aria-valuenow', nec); $('hDay').setAttribute('aria-valuenow', day);
+    const mp = (day - nec) / nec * 100;
+    $('mSteps').innerHTML = `<span>Ngày lao động = ${fh(day)} · t = ${fh(nec)}</span><span>t′ = ${fh(day)} − ${fh(nec)} = ${fh(day - nec)}</span><span class="res">m′ = t′ / t × 100% = ${fh(day - nec)} / ${fh(nec)} × 100% = ${Math.round(mp)}%</span>`;
+    updM();
+    let n;
+    if (day === 8 && nec === 4) n = 'Ví dụ gốc: 4 giờ đầu bù lại tiền công, 4 giờ sau tạo giá trị thặng dư.';
+    else if (day > 8 && nec === 4) n = '<b>Tuyệt đối:</b> kéo dài ngày lao động, t giữ nguyên.' + (day >= 12 ? ' Thời gian nghỉ trên đồng hồ đang cạn: ngày lao động có giới hạn sinh lý.' : '');
+    else if (nec < 4 && day <= 8) n = '<b>Tương đối:</b> năng suất tăng làm t ngắn lại, t′ dài ra mà ngày không dài thêm.';
+    else if (nec < 4) n = '<b>Kết hợp cả hai:</b> vừa kéo dài ngày, vừa rút ngắn t.';
+    else n = 't dài hơn 4 giờ (ví dụ tăng lương): phần trả cho người lao động lớn hơn, m′ giảm.';
+    $('methodNote').innerHTML = n;
+    document.querySelectorAll('[data-preset]').forEach((b) => b.classList.toggle('on', b.dataset.preset === `${day},${nec}`));
+    drawClock();
+  }
+  const hourAt = (x) => { const r = track.getBoundingClientRect(); return Math.round(Math.max(0, Math.min(1, (x - r.left) / r.width)) * MAXH * 2) / 2; };
+  const setNec = (h) => { nec = Math.max(1, Math.min(day - 1, h)); renderDay(); };
+  const setDay = (h) => { day = Math.max(nec + 1, Math.min(MAXH, h)); renderDay(); };
+  function drag(el, fn) { el.addEventListener('pointerdown', (e) => { e.preventDefault(); el.setPointerCapture(e.pointerId); const mv = (ev) => fn(ev); const up = () => { el.removeEventListener('pointermove', mv); el.removeEventListener('pointerup', up); }; el.addEventListener('pointermove', mv); el.addEventListener('pointerup', up); }); }
+  drag($('hNec'), (ev) => setNec(hourAt(ev.clientX))); drag($('hDay'), (ev) => setDay(hourAt(ev.clientX)));
+  track.addEventListener('pointerdown', (e) => { if (e.target.closest('.handle')) return; const h = hourAt(e.clientX); if (Math.abs(h - nec) < Math.abs(h - day)) setNec(h); else setDay(h); });
+  [['hNec', setNec, () => nec], ['hDay', setDay, () => day]].forEach(([id, fn, get]) => $(id).addEventListener('keydown', (e) => { if (e.key === 'ArrowRight' || e.key === 'ArrowUp') { fn(get() + .5); e.preventDefault(); } if (e.key === 'ArrowLeft' || e.key === 'ArrowDown') { fn(get() - .5); e.preventDefault(); } }));
+  document.querySelectorAll('[data-preset]').forEach((b) => b.addEventListener('click', () => { [day, nec] = b.dataset.preset.split(',').map(Number); renderDay(); }));
+  function updM() {
+    const n = +$('workers').value, V = n * 15, mp = (day - nec) / nec; $('workersOut').textContent = n + ' người';
+    $('MSteps').innerHTML = `<span>V = ${n} × 15 = ${V} USD/ngày</span><span class="res">M = m′ × V = ${Math.round(mp * 100)}% × ${V} = ${fmt(mp * V, mp * V % 1 ? 1 : 0)} USD/ngày</span>`;
+  }
+  $('workers').addEventListener('input', updM);
+  renderDay();
+
+  // ---------- Cấu tạo hữu cơ ----------
+  $('machines').innerHTML = Array.from({ length: 20 }, () => '<svg style="color:var(--cgray)"><use href="#i-gear"/></svg>').join('');
+  $('workersIcons').innerHTML = Array.from({ length: 28 }, () => '<svg style="color:var(--t1)"><use href="#i-person"/></svg>').join('');
+  function updAuto() {
+    const a = +$('auto').value, c = 200 * a / 100, v = 200 - c, nm = Math.round(c / 10), nw = Math.round(v / 5);
+    $('autoOut').textContent = a + '%'; $('cVal').textContent = Math.round(c); $('vVal').textContent = Math.round(v);
+    $('machines').querySelectorAll('svg').forEach((s, i) => s.classList.toggle('off', i >= nm));
+    $('workersIcons').querySelectorAll('svg').forEach((s, i) => s.classList.toggle('off', i >= nw));
+    $('cvRatio').textContent = fmt(c / v); $('cvOut').textContent = Math.max(0, 20 - nw);
+  }
+  $('auto').addEventListener('input', updAuto); updAuto();
+
+  // ---------- Cán cân lợi ích ----------
+  const split = $('split'); let share = 40, prod = 1; const BASE = 10, S0 = 40;
+  function renderSplit() {
+    const total = BASE * prod, w = total * share / 100, p = total - w, w0 = BASE * S0 / 100, p0 = BASE - w0;
+    split.style.width = (prod / 2 * 100) + '%';
+    $('splitW').style.width = share + '%'; $('splitP').style.width = (100 - share) + '%'; $('hSplit').style.left = share + '%';
+    $('hSplit').setAttribute('aria-valuenow', share); $('hSplit').querySelector('span').textContent = share + ' : ' + (100 - share);
+    $('splitWv').textContent = 'Lương ' + fmt(w); $('splitPv').textContent = 'Lợi nhuận ' + fmt(p);
+    const tilt = Math.max(-14, Math.min(14, (p - w) / total * 28));
+    $('beam').style.transform = `rotate(${tilt}deg)`;
+    const sw = .7 + w / 20 * .8, sp = .7 + p / 20 * .8;
+    $('panW').setAttribute('transform', `translate(70 110) scale(${sw}) translate(-70 -110)`); $('panP').setAttribute('transform', `translate(330 110) scale(${sp}) translate(-330 -110)`);
+    let n;
+    if (prod === 1) n = share === S0 ? 'Kéo vạch chia: phần này tăng thì phần kia giảm đúng bấy nhiêu. Đó là <b>mặt mâu thuẫn</b>.' : `Lương ${w > w0 ? 'tăng' : 'giảm'} ${fmt(Math.abs(w - w0))}, lợi nhuận ${p > p0 ? 'tăng' : 'giảm'} đúng ${fmt(Math.abs(p - p0))}: <b>mâu thuẫn</b> khi chiếc bánh không đổi.`;
+    else n = (w >= w0 && p >= p0) ? `Bánh to ra ×${fmt(prod)}: lương (${fmt(w)}) và lợi nhuận (${fmt(p)}) đều cao hơn lúc đầu (${fmt(w0)} và ${fmt(p0)}). Đó là <b>mặt thống nhất</b>.` : `Bánh đã to ra nhưng chia lệch, nên ${w < w0 ? 'lương' : 'lợi nhuận'} vẫn thấp hơn lúc đầu. Thống nhất cần cả tăng trưởng lẫn phân phối hợp lý.`;
+    $('splitNote').innerHTML = n;
+  }
+  drag($('hSplit'), (ev) => { const r = split.getBoundingClientRect(); share = Math.round(Math.max(10, Math.min(90, (ev.clientX - r.left) / r.width * 100))); renderSplit(); });
+  $('hSplit').addEventListener('keydown', (e) => { if (e.key === 'ArrowRight') { share = Math.min(90, share + 5); renderSplit(); e.preventDefault(); } if (e.key === 'ArrowLeft') { share = Math.max(10, share - 5); renderSplit(); e.preventDefault(); } });
+  document.querySelectorAll('[data-prod]').forEach((b) => b.addEventListener('click', () => { prod = +b.dataset.prod; document.querySelectorAll('[data-prod]').forEach((x) => x.classList.toggle('on', x === b)); renderSplit(); }));
+  renderSplit();
+
+  // ---------- Sơ đồ 4 quan hệ ----------
+  const RELS = [
+    ['① Người lao động ↔ Người sử dụng lao động', '<b>Thống nhất:</b> có lợi nhuận thì tiếp tục thuê lao động, người lao động có việc làm. <b>Mâu thuẫn:</b> lợi nhuận tăng thì tiền lương giảm. Công đoàn là tổ chức quan trọng nhất bảo vệ người lao động.'],
+    ['② Giữa những người sử dụng lao động', '<b>Thống nhất:</b> liên kết, hỗ trợ nhau. <b>Mâu thuẫn:</b> cạnh tranh; ai có giá trị cá biệt cao hơn giá trị xã hội sẽ thua lỗ, phá sản.'],
+    ['③ Giữa những người lao động', '<b>Mâu thuẫn:</b> cạnh tranh việc làm kéo tiền lương xuống. <b>Thống nhất:</b> đoàn kết thì đòi được quyền lợi ở chừng mực nhất định.'],
+    ['④ Cá nhân – Nhóm – Xã hội', 'Lợi ích cá nhân là cơ sở, lợi ích xã hội định hướng. “Lợi ích nhóm” gây tổn hại lợi ích khác thì phải ngăn chặn.']
+  ];
+  const edges = document.querySelectorAll('#relSvg .edge');
+  function showRel(i) { edges.forEach((e) => e.classList.toggle('on', +e.dataset.rel === i)); $('relCap').innerHTML = `<b>${RELS[i][0]}</b><span>${RELS[i][1]}</span>`; }
+  edges.forEach((e) => { e.addEventListener('click', () => showRel(+e.dataset.rel)); e.addEventListener('keydown', (k) => { if (k.key === 'Enter' || k.key === ' ') { k.preventDefault(); showRel(+e.dataset.rel); } }); });
+  showRel(0);
+})();
+</script>
+
+<script>
+(function () {
+  'use strict';
+  const VIEWS = ['trang-chu', 'chuong-3-1', 'chuong-3-2', 'chuong-5', 'tro-choi'];
+  function show() {
+    const h = location.hash.replace('#', '');
+    const v = VIEWS.includes(h) ? h : 'trang-chu';
+    document.querySelectorAll('.view').forEach((s) => { s.hidden = s.dataset.view !== v; });
+    document.querySelectorAll('.tabs a').forEach((a) => { if (a.dataset.tab === v) { a.setAttribute('aria-current', 'page'); a.scrollIntoView({ block: 'nearest', inline: 'nearest' }); } else a.removeAttribute('aria-current'); });
+    window.scrollTo(0, 0);
+  }
+  window.addEventListener('hashchange', show); show();
+  // Nền thành phố đêm cho poster trò chơi
+  const cv = document.getElementById('posterCity');
+  function city() {
+    if (!cv || !cv.clientWidth) return;
+    const w = cv.clientWidth, h = cv.clientHeight, d = Math.min(devicePixelRatio || 1, 2), x = cv.getContext('2d');
+    cv.width = w * d; cv.height = h * d; x.setTransform(d, 0, 0, d, 0, 0);
+    let seed = 11; const r = () => { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; };
+    for (let px = -5; px < w + 10;) {
+      const bw = 26 + r() * 50, bh = h * (.3 + r() * .5), top = h - bh;
+      x.fillStyle = '#0b0f1b'; x.fillRect(px, top, bw, bh);
+      for (let yy = top + 6; yy < h - 6; yy += 10) for (let xx = px + 4; xx < px + bw - 5; xx += 8) if (r() < .3) { x.fillStyle = r() < .7 ? 'rgba(243,170,90,.75)' : 'rgba(140,180,255,.6)'; x.fillRect(xx, yy, 4, 5); }
+      px += bw + 3;
+    }
+  }
+  window.addEventListener('hashchange', () => setTimeout(city, 30)); window.addEventListener('resize', city); city();
+})();
+</script>
+</body>
+</html>
